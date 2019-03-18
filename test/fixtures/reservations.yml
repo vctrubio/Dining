@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  restaurant: one
+  date: 2019-03-18 14:47:33
+
+two:
+  user: two
+  restaurant: two
+  date: 2019-03-18 14:47:33
