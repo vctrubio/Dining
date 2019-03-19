@@ -1,2 +1,4 @@
-<h1>Reservations#new</h1>
-<p>Find me in app/views/reservations/new.html.erb</p>
+<%= form_for [@restaurant,@reservation] do |f| %>
+<%= f.text_field :date, :placeholder => 'dd/mm/yyyy' %>
+<%= f.submit %>
+<% end %>
