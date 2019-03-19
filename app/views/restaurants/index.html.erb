@@ -1,10 +1,4 @@
 <%= render "components/banner" %>
-
-
-<ol>
-<% @restaurants.each do |restaurant| %>
-<li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
-<% end %>
-</ol>
+<%= render 'components/cards' %>
 
 
