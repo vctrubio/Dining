@@ -1,7 +1,8 @@
 class Restaurant < ApplicationRecord
   belongs_to :user
+  has_many :reservations
 
-  validates :user, presence: :true 
+  validates :user, presence: :true
 
   #chec to see if user is chef boolean true
 
