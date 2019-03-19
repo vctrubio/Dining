@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
-  before_action :find_restaurant, only:[:show,:new, :create]
-  befoer_action :find_user, only:[:new, :create]
+  before_action :find_restaurant, only:[:new, :create]
+  before_action :find_user, only:[:show, :new, :create]
   before_action :find_reservation, only: [:show]
 
   def new
@@ -13,9 +13,10 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user = current_user
     @reservation.restaurant = @restaurant
     if @reservation.save!
-      redirect_to restaurant_reservation_path
+      redirect_to reservation_path(@reservation)
     else
       render :new
     end
@@ -36,7 +37,7 @@ class ReservationsController < ApplicationController
   end
 
   def find_user
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 
 end
