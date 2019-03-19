@@ -1,2 +1,10 @@
 <h1>Restaurants#show</h1>
 <p>Find me in app/views/restaurants/show.html.erb</p>
+<ul>
+
+<li><%= @restaurant.name %></li>
+<li><%= @restaurant.location %></li>
+<li>capacity:<%= @restaurant.capacity %></li>
+<li>from:<%= @restaurant.open_hour %>h</li>
+<li>to:<%= @restaurant.close_hour %>h</li>
+</ul>
