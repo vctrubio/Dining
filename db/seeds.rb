@@ -70,12 +70,13 @@ old_fondita = Restaurant.create(
 )
 
 recent_fondita = Restaurant.create(
-    name: "La Recien Fondita",
-    location: "Roma Sur 234",
+    name: "four",
+    location: "Roma norte",
     open_hour: 13,
     close_hour: 23,
     user: cath,
     capacity: 5,
 )
+
 
 puts "Now finished creating 3 restaurants"
