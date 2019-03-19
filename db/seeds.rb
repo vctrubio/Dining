@@ -80,17 +80,3 @@ recent_fondita = Restaurant.create(
 )
 
 
-
-puts "Now finished creating 3 restaurants"
-
-10.times {
-  restaurant = Restaurant.new(
-    name: "#{Faker::Restaurant.name}",
-    location: "#{Faker::Address.city}",
-    open_hour: 13,
-    close_hour: 23,
-    user: cath,
-    capacity: 10,
-    )
-  restaurant.save!
-}
