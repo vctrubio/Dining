@@ -50,6 +50,7 @@ puts "Completed creating 5 new users"
 puts "------------------------------"
 
 puts "Now creating Restaurants"
+Restaurant.destroy_all
 
 new_fondita = Restaurant.create(
     name: "La Nueva Fondita de mi Mama",
