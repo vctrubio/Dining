@@ -51,6 +51,7 @@ puts "Completed creating 5 new users"
 puts "------------------------------"
 
 puts "Now creating Restaurants"
+Restaurant.destroy_all
 
 new_fondita = Restaurant.create(
     name: "La Nueva Fondita de mi Mama",
@@ -81,6 +82,7 @@ recent_fondita = Restaurant.create(
 
 
 
+
 puts "Now finished creating 3 restaurants"
 
 10.times {
@@ -94,3 +96,6 @@ puts "Now finished creating 3 restaurants"
     )
   restaurant.save!
 }
+
+puts "Now finished creating 3 restaurants"
+
