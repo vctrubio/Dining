@@ -14,20 +14,20 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    # not sure where is my path to create a restaurant
-    # @restaurant = Restaurant.new(restaurant_params)
-    # if @restaurant.save
-    #   redirect_to restaurant_path(@restaurant)
-    # else
-    #   render :new
-    # end
+    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.user = current_user
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :new
+    end
   end
 
   private
 
-  # def restaurant_params
-  #   params.require(:restaurant).permit(:name, :location, :capacity, :open_hour, :close_hour)
-  # end
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :location, :capacity, :open_hour, :close_hour)
+  end
 
   def find_restaurant
     @restaurant = Restaurant.find(params[:id])

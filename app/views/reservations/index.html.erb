@@ -1,2 +1,6 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<%= @restaurant.name %>
+<%= @restaurant.location %>
+
+<% @reservations.all do |reservation| %>
+<%= reservation.date %>
+<% end %>

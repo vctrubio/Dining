@@ -1,13 +1,10 @@
 class ReservationsController < ApplicationController
-  before_action :find_restaurant, only:[:new, :create]
+  before_action :find_restaurant, only:[:show,:new, :create]
+  befoer_action :find_user, only:[:new, :create]
   before_action :find_reservation, only: [:show]
 
   def new
     @reservation = Reservation.new
-  end
-
-  def index
-    @reservations = Reservation.all
   end
 
   def show
@@ -38,5 +35,8 @@ class ReservationsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
+  def find_user
+    @user = User.find(params[:user_id])
+  end
 
 end
