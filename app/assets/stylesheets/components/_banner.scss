@@ -1,26 +1,29 @@
 .banner {
     background-size: cover;
-    background-position: 0px -50px;
+    height: 200px;
+    min-width: 400px;
+    background-position: 0px -240px;
     padding: 150px 0;
     background-repeat: no-repeat;
+    display: block;
+    position: relative;
+    margin: 20px 0px;
+    box-shadow: 90mm;
   }
   
 
   .banner {
     text-align: center;
   }
-
-  .banner h1 {
-    margin: 0;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 32px;
-    font-weight: bold;
-  }
   
   .banner p {
-    font-size: 20px;
+    font-size: 24px;
     color: white;
-    opacity: .7;
+    opacity: .9;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+   
+    font-weight: bold;
+    position: relative;
+    top: 60px;
+    left: -190px;
   }
