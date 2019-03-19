@@ -1,7 +1,6 @@
 .banner {
     background-size: cover;
     height: 200px;
-    min-width: 400px;
     background-position: 0px -240px;
     padding: 150px 0;
     background-repeat: no-repeat;
@@ -9,6 +8,7 @@
     position: relative;
     margin: 20px 0px;
     box-shadow: 90mm;
+    border-radius: 12px;
   }
   
 
@@ -27,3 +27,5 @@
     top: 60px;
     left: -190px;
   }
+
+
