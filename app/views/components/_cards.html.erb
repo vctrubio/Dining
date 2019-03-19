@@ -1,14 +1,22 @@
 <div class="container">
   <div class="row">
   <% @restaurants.each do |restaurant| %>
-  <div class="col-md-3">
+  <div class="col-xs-12 col-sm-6 col-lg-3">
     <div class="card-trip">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sushi_platter.jpg/800px-Sushi_platter.jpg">
         <div class="card-trip-infos">
           <div>
             <h2><%= restaurant.name %></h2>
             <h3><%= restaurant.location %></h3>
-            <h4>stars</h4>
+            <span class="extra-details">
+              <div>
+              <i class="fas fa-star fa-xs"></i>
+              <i class="fas fa-star fa-xs"></i>
+              <i class="fas fa-star fa-xs"></i>
+              <i class="fas fa-star fa-xs"></i>
+              </div>
+              <h4>opens: 8:00 - 22:00</h4>
+            </span>
           </div>
         </div>
       </div>

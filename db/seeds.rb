@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
 puts "Creating databasse for users x 5"
 User.destroy_all
@@ -79,4 +80,17 @@ recent_fondita = Restaurant.create(
 )
 
 
+
 puts "Now finished creating 3 restaurants"
+
+10.times {
+  restaurant = Restaurant.new(
+    name: "#{Faker::Restaurant.name}",
+    location: "#{Faker::Address.city}",
+    open_hour: 13,
+    close_hour: 23,
+    user: cath,
+    capacity: 10,
+    )
+  restaurant.save!
+}
