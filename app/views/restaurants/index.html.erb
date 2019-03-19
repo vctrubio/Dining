@@ -3,3 +3,4 @@
 <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
 <% end %>
 </ol>
+<%= link_to 'Logout', destroy_user_session_path, method: 'delete' %>

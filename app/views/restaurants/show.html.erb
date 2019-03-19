@@ -7,3 +7,5 @@
 <li>from: <%= @restaurant.open_hour %>h</li>
 <li>to: <%= @restaurant.close_hour %>h</li>
 </ul>
+
+<%= link_to "set a reservation", new_restaurant_reservation_path(@restaurant) %>
