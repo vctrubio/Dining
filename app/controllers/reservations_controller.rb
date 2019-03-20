@@ -1,13 +1,14 @@
 class ReservationsController < ApplicationController
   before_action :find_restaurant, only:[:new, :create]
-  before_action :find_user, only:[:show, :new, :create]
-  before_action :find_reservation, only: [:show]
 
   def new
     @reservation = Reservation.new
+    authorize @reservation
   end
 
   def show
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
 
   end
 
@@ -15,6 +16,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.restaurant = @restaurant
+    authorize @reservation
     if @reservation.save!
       redirect_to reservation_path(@reservation)
     else
@@ -25,19 +27,11 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:date, :user_id)
-  end
-
-  def find_reservation
-    @reservation = Reservation.find(params[:id])
+    params.require(:reservation).permit(:date, :time, :name, :guests)
   end
 
   def find_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
-  end
-
-  def find_user
-    @user = current_user
   end
 
 end
