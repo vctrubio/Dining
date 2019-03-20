@@ -1,13 +1,18 @@
 class RestaurantsController < ApplicationController
+  # Just one line to allow the show of the index before login
   skip_before_action :authenticate_user!, only: :index
   before_action :find_restaurant, only: [:show, :edit, :update, :destroy]
-  #Just one line to allow the show of the index before login
-
-
 
   def index
-    @restaurants = policy_scope(Restaurant)
-
+    @restaurants = policy_scope(Restaurant).where.not(latitude: nil, longitude: nil)
+    @active = user_signed_in?
+    @markers = @restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        image_url: helpers.asset_url('fork.png')
+      }
+    end
   end
 
   def show
@@ -51,7 +56,7 @@ class RestaurantsController < ApplicationController
     params.require(:restaurant).permit(:name, :location, :capacity, :open_hour, :close_hour, :photo)
   end
   #:photo added
-  
+
   def find_restaurant
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
