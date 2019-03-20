@@ -3,7 +3,8 @@
 <div class="container">
  <div class="row">
 
-   <img src="#" alt="Restaurant Image goes here" width="40px">
+    <%= cl_image_tag @restaurant.photo, height: 600, width: 800, crop: :fill %>
+
 
     <ul>Name: <%= @restaurant.name %></ul>
     <ul>Location: <%= @restaurant.location %></ul>

@@ -3,14 +3,13 @@ class Restaurant < ApplicationRecord
   has_many :reservations
 
   validates :user, presence: :true
-
-  #chec to see if user is chef boolean true
-
   validates :name, presence: :true
   validates :location, uniqueness: :true
   validates :capacity, numericality: { more_than_or_equal_to: 1,  only_integer: true }
   validates :open_hour, presence: :true
   validates :close_hour, presence: :true
+
+  mount_uploader :photo, PhotoUploader
 
   #validation for intereger to become time from 0-23:59H
 

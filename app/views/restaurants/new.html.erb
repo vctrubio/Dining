@@ -3,6 +3,8 @@
   <%= f.input :name %>
   <%= f.input :location %>
   <%= f.input :capacity %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.input :open_hour, placeholder: "military-time" %>
   <%= f.input :close_hour, placeholder: "military-time" %>
   <%= f.submit %>
