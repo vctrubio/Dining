@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = policy_scope(Restaurant)
+
   end
 
   def show
@@ -31,7 +32,8 @@ class RestaurantsController < ApplicationController
   def restaurant_params
     params.require(:restaurant).permit(:name, :location, :capacity, :open_hour, :close_hour, :photo)
   end
-
+  #:photo added
+  
   def find_restaurant
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
