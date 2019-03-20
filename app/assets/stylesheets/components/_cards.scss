@@ -5,6 +5,10 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  border-radius: 5px;
 }
 
+.card-trip a {
+  text-decoration: none;
+}
+
 .card-trip > img {
   height: 120px;
   width: 100%;
@@ -19,6 +23,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 180px;
+
 }
 
 .card-trip h3 {
@@ -67,4 +72,9 @@ padding-bottom: 12px;
 }
 .fas {
   font-size: 7px;
+}
+
+.unblue a {
+  color: inherit;
+  text-decoration: none;
 }
