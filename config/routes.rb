@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   # get 'reservations/show'
 
 resources :restaurants, only: [ :index, :show, :new, :create ] do
-  resources :reservations, only: [ :new, :create ]
+  resources :reservations, only: [ :new, :create]
 end
+
+resources :reservations, only: [:show]
 
 devise_for :users
   resources :users  do

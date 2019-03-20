@@ -34,6 +34,8 @@ gem 'turbolinks', '~> 5'
 
 gem 'cloudinary', '~> 1.9.1'
 
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 2.5'
 

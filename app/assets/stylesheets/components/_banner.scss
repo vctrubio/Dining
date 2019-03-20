@@ -1,0 +1,31 @@
+.banner {
+    background-size: cover;
+    height: 200px;
+    background-position: 0px -240px;
+    padding: 150px 0;
+    background-repeat: no-repeat;
+    display: block;
+    position: relative;
+    margin: 20px 0px;
+    box-shadow: 90mm;
+    border-radius: 12px;
+  }
+  
+
+  .banner {
+    text-align: center;
+  }
+  
+  .banner p {
+    font-size: 24px;
+    color: white;
+    opacity: .9;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+   
+    font-weight: bold;
+    position: relative;
+    top: 60px;
+    left: -190px;
+  }
+
+

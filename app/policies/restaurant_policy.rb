@@ -14,3 +14,4 @@ class RestaurantPolicy < ApplicationPolicy
   end
 
 end
+
