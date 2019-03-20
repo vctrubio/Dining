@@ -1,0 +1,7 @@
+  <%= simple_form_for @user do |f| %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :chef %>  
+         <%# = f.input :remember_me, as: :boolean if (user.chef == false)? %>
+        <%= f.button :submit, class: 'btn btn-info' %>
+      <% end %>

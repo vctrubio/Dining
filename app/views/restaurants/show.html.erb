@@ -1,12 +1,30 @@
 <h1>Restaurants#show</h1>
 
-<ul>
-<li>Name: <%= @restaurant.name %></li>
-<li>Location: <%= @restaurant.location %></li>
-<li>capacity: <%= @restaurant.capacity %></li>
-<li>from: <%= @restaurant.open_hour %>h</li>
-<li>to: <%= @restaurant.close_hour %>h</li>
-</ul>
+<div class="container">
+ <div class="row">
+
+    <%= cl_image_tag @restaurant.photo, height: 600, width: 800, crop: :fill %>
+
+
+    <ul>Name: <%= @restaurant.name %></ul>
+    <ul>Location: <%= @restaurant.location %></ul>
+
+    <ul>capacity: <%= @restaurant.capacity %></ul>
+    <ul>from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %>h</ul>
+</div>
+<div class="row">
+    <ul>this belongs to: <%= link_to @restaurant.user.username.capitalize, user_path(@restaurant.user) %></ul>
+    <img src="#" alt="User Image goes here: next to link" width="40px">
+    <div class="row">
+    <ul>contact! <%= @restaurant.user.email %></ul>
+    </div>
+</div>
+    
+</div>
 
 <%= link_to "set a reservation", new_restaurant_reservation_path(@restaurant) %>
+
 <%= link_to 'Back to home', restaurants_path %>
+
+<%= link_to 'Delete restaurant', restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you super duper sure?" }%>
+
