@@ -1,4 +1,25 @@
-<%= render "components/banner" %>
-<%= render 'components/cards' %>
+<% if @active %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <%= render 'components/cards' %>
+      </div>
+    </div>
+    <div class="col-md-6 fixed"
+    id="map"
+    style="height: 100vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY=pk.eyJ1Ijoia29tY2F0aCIsImEiOiJjanRobnk5bjkwYzVkNDNwNTBhaHl0NDZxIn0.LrfPprHVOfNxhf-6WpJVow'] %>"></div>
+  </div>
+</div>
+<% else %>
+<%= render 'components/banner' %>
+<div class="container">
+  <div class="row">
+    <%= render 'components/cards' %>
+  </div>
+</div>
+<% end %>
 
 

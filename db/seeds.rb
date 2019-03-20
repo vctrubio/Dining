@@ -97,5 +97,5 @@ puts "Now finished creating 3 restaurants"
   restaurant.save!
 }
 
-puts "Now finished creating 3 restaurants"
+puts "Now finished creating 13 restaurants"
 

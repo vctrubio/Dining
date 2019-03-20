@@ -15,11 +15,16 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { toggleFooter } from "./footer";
 import { loadDynamicBannerText } from './banner';
+import { initMapbox } from './mapbox';
 console.log('Hello World from Webpacker')
 
 
+
+initMapbox();
 toggleFooter();
 loadDynamicBannerText();
 
