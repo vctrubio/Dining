@@ -23,3 +23,4 @@
 </div>
 
 <%= link_to "set a reservation", new_restaurant_reservation_path(@restaurant) %>
+<%= link_to 'Delete restaurant', restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you super duper sure?" }%>
