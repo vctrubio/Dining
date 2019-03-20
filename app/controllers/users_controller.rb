@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def user_params_update_chef
-    params.require(:user).permit(:chef)
+    params.require(:user).permit(:chef, :photo)
   end
 
 end
