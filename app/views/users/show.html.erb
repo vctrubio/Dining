@@ -1,8 +1,8 @@
 <h2>Welcome</h2>
-<%= current_user.username %>
+<%= @user.username %>
 <br>
 <h3>You're Restarurants in list:</h3>
-<% current_user.restaurants.each do |restaurant| %>
+<% @user.restaurants.each do |restaurant| %>
 <li><%= restaurant.name%></li>
  <% end %>
 
