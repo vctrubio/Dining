@@ -1,13 +1,13 @@
 @import "bootstrap/scss/bootstrap";
 @import "./components/index";
 @import "./components/cards";
+@import "reservations";
+@import "restaurants";
+
 
 body {
   padding-top: 66px;
 }
-
-/* unvisited link */
-
 
 
 

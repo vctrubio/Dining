@@ -1,4 +1,10 @@
 <%= @reservation.restaurant.name %>
-<%= @user.username %>
+<%= @reservation.name %>
 <%= @reservation.date.strftime("%e %b") %>
+<%= @reservation.time.hour %>
+<%= @reservation.time.min %>
 <%= @reservation.restaurant.location %>
+<%= @reservation.guests %>
+
+<%= link_to 'Back to restaurant', restaurant_path(@reservation.restaurant) %>
+<%= link_to 'Back to home', restaurants_path %>
