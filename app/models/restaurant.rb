@@ -2,6 +2,9 @@ class Restaurant < ApplicationRecord
   belongs_to :user
   has_many :reservations
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   validates :user, presence: :true
   validates :name, presence: :true
   validates :location, uniqueness: :true
