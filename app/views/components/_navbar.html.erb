@@ -1,21 +1,24 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to restaurants_path, class: "navbar-brand" do %>
-    <%= image_tag "https://webstockreview.net/images/clipart-restaurant-lunch-restaurant-13.png" %>
-  <% end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+      <%= link_to restaurants_path, class: "navbar-brand" do %>
+        <%= image_tag "https://webstockreview.net/images/clipart-restaurant-lunch-restaurant-13.png" %>
+      <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if  user_signed_in? %>
       <li class="nav-item <%= "active" if current_page?(root_path) %>">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item <%= "active" if current_page?(root_path) %>"> <!-- FALTA CAMBIAR ROOT -->
-        <%= link_to "Become a chef", "#", class: "nav-link" %> <!-- FALTA RUTA -->
+      <li class="nav-item <%= "active" if current_page?(new_restaurant_path) %>"> <!-- FALTA CAMBIAR ROOT -->
+        <%= link_to "NEW",  new_restaurant_path, class: "nav-link" %> 
+          <li class="nav-item <%= "active" if current_page?(edit_user_path(current_user)) %>"> <!-- FALTA CAMBIAR ROOT -->
+        <%= link_to "Become a chef",  edit_user_path(current_user), class: "nav-link" %> <!-- FALTA RUTA -->
+      <%# if statement if chef is already a chef, should redirect like mister-cocktail to update form %>
+
       </li>
 <!--       <li class="nav-item <%= "active" if current_page?(restaurants_path) %>">
         <%= link_to "Messages", "#", class: "nav-link" %>
@@ -38,4 +41,3 @@
     </ul>
   </div>
 </div>
-

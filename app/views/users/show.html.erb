@@ -1,2 +1,19 @@
-<h2>hello</h2>
-<%= @user.email %>
+<h2>Welcome</h2>
+<%= @user.username %>
+
+
+
+<img src="<%= @user.photo %>" alt="[Profile picture if none]">
+<br>
+<h3>You're Restarurants in list:</h3>
+<% @user.restaurants.each do |restaurant| %>
+<li><%= restaurant.name%></li>
+ <% end %>
+
+<h3>And here you should see any reservations you may have,</h3>
+<p>or request to make a new reservation at you're fav restaurants</p>
+
+<%# #welcome username
+#show if you are a chef or not
+#shows your restarurants if you are a chef
+#shows any reservations made %>

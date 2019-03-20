@@ -38,9 +38,13 @@
 
 <!--
 <%= link_to "set a reservation", new_restaurant_reservation_path(@restaurant) %>
+
+<%= link_to 'Back to home', restaurants_path %>
+
 <%= link_to 'Delete restaurant', restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you super duper sure?" }%>
  -->
 
 <!--   <%= link_to @restaurant.user.username.capitalize, user_path(@restaurant.user) %>
       <img src="#" alt="" width="40px">
       contact! <%= @restaurant.user.email %> -->
+
