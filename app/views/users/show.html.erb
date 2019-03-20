@@ -1,5 +1,9 @@
 <h2>Welcome</h2>
 <%= @user.username %>
+
+
+
+<img src="<%= @user.photo %>" alt="[Profile picture if none]">
 <br>
 <h3>You're Restarurants in list:</h3>
 <% @user.restaurants.each do |restaurant| %>
