@@ -10,8 +10,9 @@
     id="map"
     style="height: 100vh;"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY=pk.eyJ1Ijoia29tY2F0aCIsImEiOiJjanRobnk5bjkwYzVkNDNwNTBhaHl0NDZxIn0.LrfPprHVOfNxhf-6WpJVow'] %>"></div>
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY=pk.eyJ1Ijoia29tY2F0aCIsImEiOiJjanRobnk5bjkwYzVkNDNwNTBhaHl0NDZxIn0.LrfPprHVOfNxhf-6WpJVow'] %>">
   </div>
+</div>
 </div>
 <% else %>
 <%= render 'components/banner' %>
@@ -21,5 +22,4 @@
   </div>
 </div>
 <% end %>
-
 
