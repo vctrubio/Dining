@@ -1,5 +1,9 @@
 class RestaurantsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :find_restaurant, only: [:show, :edit, :update, :destroy]
+  #Just one line to allow the show of the index before login
+
+
 
   def index
     @restaurants = policy_scope(Restaurant)
@@ -43,7 +47,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :location, :capacity, :open_hour, :close_hour)
+    params.require(:restaurant).permit(:name, :location, :capacity, :open_hour, :close_hour, :photo)
   end
 
   def find_restaurant
