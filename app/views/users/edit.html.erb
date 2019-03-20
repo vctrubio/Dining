@@ -1,7 +1,17 @@
+  <div class="container hola">
+<div class="fondo">
+  <div class="row">
+      <div class="col-md-6 offset-md-3">
   <%= simple_form_for @user do |f| %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :chef %>  
+        <p>Becoming a chef will allow you to post your restaurant</p>
          <%# = f.input :remember_me, as: :boolean if (user.chef == false)? %>
         <%= f.button :submit, class: 'btn btn-info' %>
       <% end %>
+
+    </div>
+    </div>
+    </div>
+    </div>

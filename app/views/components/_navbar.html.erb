@@ -13,8 +13,10 @@
       <li class="nav-item <%= "active" if current_page?(root_path) %>">
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item <%= "active" if current_page?(root_path) %>"> <!-- FALTA CAMBIAR ROOT -->
-        <%= link_to "Update Profile", edit_user_path(current_user), class: "nav-link" %> <!-- FALTA RUTA -->
+      <li class="nav-item <%= "active" if current_page?(new_restaurant_path) %>"> <!-- FALTA CAMBIAR ROOT -->
+        <%= link_to "NEW",  new_restaurant_path, class: "nav-link" %> 
+          <li class="nav-item <%= "active" if current_page?(edit_user_path(current_user)) %>"> <!-- FALTA CAMBIAR ROOT -->
+        <%= link_to "Become a chef",  edit_user_path(current_user), class: "nav-link" %> <!-- FALTA RUTA -->
       <%# if statement if chef is already a chef, should redirect like mister-cocktail to update form %>
 
       </li>
