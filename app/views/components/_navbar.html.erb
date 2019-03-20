@@ -7,38 +7,37 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if  user_signed_in? %>
+      <li class="nav-item <%= "active" if current_page?(root_path) %>">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item <%= "active" if current_page?(new_restaurant_path) %>"> <!-- FALTA CAMBIAR ROOT -->
+        <%= link_to "NEW",  new_restaurant_path, class: "nav-link" %> 
+          <li class="nav-item <%= "active" if current_page?(edit_user_path(current_user)) %>"> <!-- FALTA CAMBIAR ROOT -->
+        <%= link_to "Become a chef",  edit_user_path(current_user), class: "nav-link" %> <!-- FALTA RUTA -->
+      <%# if statement if chef is already a chef, should redirect like mister-cocktail to update form %>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <% if  user_signed_in? %>
-            <span class="navbar-text">
-              Welcome <%= current_user.username %>!
-            </span>
-          <li class="nav-item <%= "active" if current_page?(root_path) %>">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item <%= "active" if current_page?(root_path) %>"> <!-- FALTA CAMBIAR ROOT -->
-            <%= link_to "Become a chef", "#", class: "nav-link" %> <!-- FALTA RUTA -->
-          </li>
-    <!--       <li class="nav-item <%= "active" if current_page?(restaurants_path) %>">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li> -->
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <!-- <%= link_to "Action", "#", class: "dropdown-item" %> -->
-              <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "dropdown-item" %>
-            </div>
-          </li>
-          <% else %>
-          <li class="nav-item <%= "active" if current_page?(new_user_session_path) %>">
-            <%= link_to "Log in", new_user_session_path, method: 'get', class: "nav-link" %>
-          </li>
-          <li class="nav-item <%= "active" if current_page?(new_user_registration_path) %>">
-            <%= link_to "Sign Up", new_user_registration_path, method: 'get', class: "nav-link" %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
+      </li>
+<!--       <li class="nav-item <%= "active" if current_page?(restaurants_path) %>">
+        <%= link_to "Messages", "#", class: "nav-link" %>
+      </li> -->
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <!-- <%= link_to "Action", "#", class: "dropdown-item" %> -->
+          <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "dropdown-item" %>
+        </div>
+      </li>
+      <% else %>
+      <li class="nav-item <%= "active" if current_page?(new_user_session_path) %>">
+        <%= link_to "Log in", new_user_session_path, method: 'get', class: "nav-link" %>
+      </li>
+      <li class="nav-item <%= "active" if current_page?(new_user_registration_path) %>">
+        <%= link_to "Sign Up", new_user_registration_path, method: 'get', class: "nav-link" %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
-

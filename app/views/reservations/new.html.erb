@@ -1,4 +1,9 @@
-<%= form_for [@restaurant,@reservation] do |f| %>
-<%= f.text_field :date, :placeholder => 'dd/mm/yyyy' %>
+<%= simple_form_for [@restaurant,@reservation] do |f| %>
+<%= f.text_field :name, :placeholder => 'Name for reservation'  %>
+<%= f.input :date, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year,
+                              order: [:day, :month, :year] %>
+<%= f.input :time %>
+<%= f.text_field :guests, :placeholder => 'Number of guests' %>
 <%= f.submit %>
 <% end %>

@@ -1,26 +1,50 @@
-<h1>Restaurants#show</h1>
+<!-- <div class="container">
+  <div id="restaurant-photo">
+<%= cl_image_tag @restaurant.photo, height: 600, width: 600, crop: :fill %>
+  </div>
+</div> -->
 
-<div class="container">
- <div class="row">
-
-    <%= cl_image_tag @restaurant.photo, height: 600, width: 800, crop: :fill %>
 
 
-    <ul>Name: <%= @restaurant.name %></ul>
-    <ul>Location: <%= @restaurant.location %></ul>
+<div class="container restaurant-show">
 
-    <ul>capacity: <%= @restaurant.capacity %></ul>
-    <ul>from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %>h</ul>
-</div>
-<div class="row">
-    <ul>this belongs to: <%= link_to @restaurant.user.username.capitalize, user_path(@restaurant.user) %></ul>
-    <img src="#" alt="User Image goes here: next to link" width="40px">
-    <div class="row">
-    <ul>contact! <%= @restaurant.user.email %></ul>
+    <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo" %>
+
+
+   <div class="restaurant-content">
+     <h1><%= @restaurant.name %></h1>
+     <h2><%= @restaurant.location %></h2>
+      <h3>   seats available: <%= @restaurant.capacity %></h3>
+     <h3>open from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %></h3>
+   </div>
+
+   <div class="reviews">
+    <h4>reviews</h4>
+    <div id="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
     </div>
-</div>
-    
+   </div>
+
+   <div class="bottom-section">
+   <h4 class="host-by">hosted by chef <%= @restaurant.user.username.capitalize %> </h4>
+   <div class="avatar" id="avatar-gray"></div>
+   </div>
+
+
 </div>
 
+
+<!--
 <%= link_to "set a reservation", new_restaurant_reservation_path(@restaurant) %>
+
+<%= link_to 'Back to home', restaurants_path %>
+
 <%= link_to 'Delete restaurant', restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you super duper sure?" }%>
+ -->
+
+<!--   <%= link_to @restaurant.user.username.capitalize, user_path(@restaurant.user) %>
+      <img src="#" alt="" width="40px">
+      contact! <%= @restaurant.user.email %> -->
+

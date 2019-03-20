@@ -1,3 +1,109 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.restaurant-show {
+  text-align: center;
+  margin-top: 10px;
+
+}
+
+.restaurant-show h1 {
+font-size: 32px ;
+font-weight: 800 ;
+line-height: 1.125em ;
+color: rgb(72, 72, 72) ;
+padding-top: 6px ;
+padding-bottom: 6px ;
+}
+
+.restaurant-show h2 {
+  font-size: 16px ;
+font-weight: 400 ;
+line-height: 1.375em ;
+color: rgb(72, 72, 72) ;
+}
+
+.restaurant-show  h3 {
+  font-size: 16px ;
+font-weight: 600 ;
+line-height: 1.375em ;
+color: rgb(72, 72, 72) ;
+}
+
+
+.restaurant-photo {
+  max-height: 200px;
+  height: 200px;
+  width: 100%;
+  border: 2px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+.restaurant-content {
+  padding-top: 20px;
+}
+
+.bottom-section {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-section h4 {
+    font-size: 24px ;
+  font-weight: 800 ;
+  line-height: 1.25em ;
+  color: rgb(72, 72, 72) ;
+  padding-top: 2px ;
+  margin-bottom: 0px;
+}
+
+.reviews {
+  display: flex;
+
+  justify-content: center;
+
+  border-top-style: solid;
+
+  border-top-width: 1px;
+
+  border-bottom-width: 1px;
+
+  border-bottom-style: solid;
+
+  padding-top: 20px;
+
+  margin-top: 20px;
+
+  padding-bottom: 20px;
+}
+
+.reviews h4 {
+  font-size: 24px ;
+font-weight: 800 ;
+line-height: 1.25em ;
+color: rgb(72, 72, 72) ;
+padding-top: 2px ;
+padding-bottom: 2px ;
+
+}
+
+#stars {
+padding-top: 3px;
+padding-left: 10px;
+}
+
+
+#avatar-gray {
+ background-color: gray;
+}
+
+.host-by {
+  padding-right: 30px;
+}
