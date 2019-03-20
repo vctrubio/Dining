@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  #Just one line to allow the show of the index before login
+  skip_before_action :authenticate_user!, only: :index
   before_action :find_restaurant, only: [:show]
 
   def index
