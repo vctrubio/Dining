@@ -3,7 +3,7 @@
 <%= f.input :date, as: :date, start_year: Date.today.year,
                               end_year: Date.today.year,
                               order: [:day, :month, :year] %>
-<%= f.input :time %>
+<%= f.input :time, collection: @restaurant.open_hour..@restaurant.close_hour %>
 <%= f.text_field :guests, :placeholder => 'Number of guests' %>
 <%= f.submit %>
 <% end %>
