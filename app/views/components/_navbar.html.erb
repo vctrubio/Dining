@@ -1,41 +1,44 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to restaurants_path, class: "navbar-brand" do %>
-    <%= image_tag "https://webstockreview.net/images/clipart-restaurant-lunch-restaurant-13.png" %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if  user_signed_in? %>
-      <li class="nav-item <%= "active" if current_page?(root_path) %>">
-        <%= link_to "Home", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item <%= "active" if current_page?(root_path) %>"> <!-- FALTA CAMBIAR ROOT -->
-        <%= link_to "Become a chef", "#", class: "nav-link" %> <!-- FALTA RUTA -->
-      </li>
-<!--       <li class="nav-item <%= "active" if current_page?(restaurants_path) %>">
-        <%= link_to "Messages", "#", class: "nav-link" %>
-      </li> -->
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <!-- <%= link_to "Action", "#", class: "dropdown-item" %> -->
-          <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "dropdown-item" %>
-        </div>
-      </li>
-      <% else %>
-      <li class="nav-item <%= "active" if current_page?(new_user_session_path) %>">
-        <%= link_to "Log in", new_user_session_path, method: 'get', class: "nav-link" %>
-      </li>
-      <li class="nav-item <%= "active" if current_page?(new_user_registration_path) %>">
-        <%= link_to "Sign Up", new_user_registration_path, method: 'get', class: "nav-link" %>
-      </li>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+      <%= link_to restaurants_path, class: "navbar-brand" do %>
+        <%= image_tag "https://webstockreview.net/images/clipart-restaurant-lunch-restaurant-13.png" %>
       <% end %>
-    </ul>
-  </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <% if  user_signed_in? %>
+            <span class="navbar-text">
+              Welcome <%= current_user.username %>!
+            </span>
+          <li class="nav-item <%= "active" if current_page?(root_path) %>">
+            <%= link_to "Home", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item <%= "active" if current_page?(root_path) %>"> <!-- FALTA CAMBIAR ROOT -->
+            <%= link_to "Become a chef", "#", class: "nav-link" %> <!-- FALTA RUTA -->
+          </li>
+    <!--       <li class="nav-item <%= "active" if current_page?(restaurants_path) %>">
+            <%= link_to "Messages", "#", class: "nav-link" %>
+          </li> -->
+          <li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <!-- <%= link_to "Action", "#", class: "dropdown-item" %> -->
+              <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "dropdown-item" %>
+            </div>
+          </li>
+          <% else %>
+          <li class="nav-item <%= "active" if current_page?(new_user_session_path) %>">
+            <%= link_to "Log in", new_user_session_path, method: 'get', class: "nav-link" %>
+          </li>
+          <li class="nav-item <%= "active" if current_page?(new_user_registration_path) %>">
+            <%= link_to "Sign Up", new_user_registration_path, method: 'get', class: "nav-link" %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
 </div>
 
