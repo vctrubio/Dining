@@ -20,12 +20,9 @@ gem 'webpacker'
 
 #added by me
 gem 'simple_form'
-
-
+gem 'geocoder'
 gem 'devise'
-
 gem 'pundit'
-
 gem 'carrierwave', '~> 1.2'
 
 
