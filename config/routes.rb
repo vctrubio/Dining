@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   resources :reservations, only: [:show]
 
-  devise_for :users
+devise_for :users, controllers: {registrations: 'registrations'}
+
   resources :users  do
     # resources :restaurants, only: [:index, :show]
     member do
