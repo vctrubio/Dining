@@ -3,6 +3,13 @@
         <%= image_tag "https://webstockreview.net/images/clipart-restaurant-lunch-restaurant-13.png" %>
       <% end %>
 
+      <%= form_tag restaurants_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+        placeholder: "Search for a restaurant" %>
+      <% end %>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -14,7 +21,7 @@
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
       <li class="nav-item <%= "active" if current_page?(new_restaurant_path) %>"> <!-- FALTA CAMBIAR ROOT -->
-        <%= link_to "NEW",  new_restaurant_path, class: "nav-link" %> 
+        <%= link_to "NEW",  new_restaurant_path, class: "nav-link" %>
           <li class="nav-item <%= "active" if current_page?(edit_user_path(current_user)) %>"> <!-- FALTA CAMBIAR ROOT -->
         <%= link_to "Become a chef",  edit_user_path(current_user), class: "nav-link" %> <!-- FALTA RUTA -->
       <%# if statement if chef is already a chef, should redirect like mister-cocktail to update form %>
