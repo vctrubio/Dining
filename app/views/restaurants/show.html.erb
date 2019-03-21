@@ -4,6 +4,7 @@
   </div>
 </div> -->
 
+     <%= render 'components/modal-reserve' %>
 
 
 <div class="container restaurant-show">
@@ -16,14 +17,19 @@
      <h2><%= @restaurant.location %></h2>
       <h3>   seats available: <%= @restaurant.capacity %></h3>
      <h3>open from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %></h3>
+     <button type="button" class="btn btn-secondary" id="reserve-button">make a reservation!</button>
+
+
    </div>
 
    <div class="reviews">
-    <h4>reviews</h4>
+    <h4>rating</h4>
     <div id="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
+      <% if rating = @restaurant.average_rating %>
+        <% rating.round.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      <% end %>
     </div>
    </div>
 
@@ -31,10 +37,7 @@
    <h4 class="host-by">hosted by chef <%= @restaurant.user.username.capitalize %> </h4>
    <div class="avatar" id="avatar-gray"></div>
    </div>
-
-
 </div>
-
 
 <!--
 <%= link_to "set a reservation", new_restaurant_reservation_path(@restaurant) %>

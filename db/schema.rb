@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_20_202028) do
+ActiveRecord::Schema.define(version: 2019_03_21_192527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_202028) do
     t.integer "guests"
     t.time "time"
     t.string "name"
+    t.integer "rating"
     t.index ["restaurant_id"], name: "index_reservations_on_restaurant_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
@@ -31,16 +32,15 @@ ActiveRecord::Schema.define(version: 2019_03_20_202028) do
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.text "reviews"
     t.integer "capacity"
     t.integer "open_hour"
     t.integer "close_hour"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo"
     t.float "latitude"
     t.float "longitude"
+    t.string "photo", default: "https://res.cloudinary.com/vvrruubb69e/image/upload/v1553192478/Screenshot_2019-03-21_at_12.21.10.png"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_202028) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.boolean "chef"
-    t.string "photo"
+    t.string "photo", default: "https://res.cloudinary.com/dmeg8bow6/image/upload/v1542791113/02th-egg-person.jpg"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
