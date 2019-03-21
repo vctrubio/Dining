@@ -14,6 +14,14 @@ class Restaurant < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  #scope for search
+  include PgSearch
+  pg_search_scope :search_by_name_and_location,
+    against: [ :name, :location ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   #validation for intereger to become time from 0-23:59H
 
   def average_rating

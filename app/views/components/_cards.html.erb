@@ -5,7 +5,9 @@
   <div class="col-xs-12 col-sm-6 col-lg-4 remove-padding">
       <%= link_to restaurant_path(restaurant) do %>
     <div class="card-trip">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sushi_platter.jpg/800px-Sushi_platter.jpg">
+        <%= cl_image_tag restaurant.photo%>       
+        <%# default profil pic should be added %>
+       <img src="" alt="">
         <div class="card-trip-infos">
           <div>
             <h2><%= restaurant.name %></h2>
@@ -27,3 +29,4 @@
     <% end %>
 </div>
 </div>
+

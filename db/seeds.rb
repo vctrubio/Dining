@@ -94,7 +94,7 @@ puts "Now finished creating 3 restaurants"
     user: cath,
     capacity: 10,
     )
-  restaurant.save!
+  restaurant.save!  
 }
 
 puts "Now finished creating 13 restaurants"
