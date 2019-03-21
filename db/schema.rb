@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_192527) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.string "photo", default: "https://res.cloudinary.com/vvrruubb69e/image/upload/v1553192478/Screenshot_2019-03-21_at_12.21.10.png"
+    t.string "photo", default: "https://res.cloudinary.com/dmeg8bow6/image/upload/v1542791113/02th-egg-person.jpg"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_192527) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.boolean "chef"
-    t.string "photo", default: "https://res.cloudinary.com/dmeg8bow6/image/upload/v1542791113/02th-egg-person.jpg"
+    t.string "photo", default: "https://res.cloudinary.com/vvrruubb69e/image/upload/v1553192478/Screenshot_2019-03-21_at_12.21.10.png"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
