@@ -1,30 +1,11 @@
-<h2> Hi</h2>
-<%= current_user.username%>
 
-
-
-
-
-
-<div class="container">
-
-
-    
-
-        <h3>You have made a reservation at:</h3>
-       
-        <%= @reservation.restaurant.name %>
-        <%= @reservation.name %>
-         <%= @reservation.restaurant.location %>
-
-
-    <div class= "row">
-        <%= @reservation.date.strftime("%e %b") %>
-        <%= @reservation.time.hour %>
-        <%= @reservation.time.min %>
-    </div>
-    <p>No. of guest:<%= @reservation.guests %></p>
-</div>
-
+<%= @reservation.restaurant.name %>
+<%= @reservation.name %>
+<%= @reservation.date.strftime("%e %b") %>
+<%= @reservation.time.hour %>
+<%= @reservation.time.min %>
+<%= @reservation.restaurant.location %>
+<%= @reservation.guests %>
+<%= render 'components/rating' %>
 <%= link_to 'Back to restaurant', restaurant_path(@reservation.restaurant) %>
 <%= link_to 'Back to home', restaurants_path %>

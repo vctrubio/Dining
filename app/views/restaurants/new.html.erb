@@ -2,15 +2,15 @@
 <div class="fondo">
   <div class="row">
       <div class="col-md-6 offset-md-3">
-<h1>Restaurants#new</h1>
+<h1>Restaurant's</h1>
 <%= simple_form_for [@restaurant] do |f| %>
-  <%= f.input :name %> 
+  <%= f.input :name %>
   <%= f.input :location %>
-  <%= f.input :capacity %>
+  <%= f.input :capacity, input_html: {min: 1} %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :open_hour, placeholder: "military-time" %>
-  <%= f.input :close_hour, placeholder: "military-time" %>
+  <%= f.input :open_hour,  collection: (0..23).to_a , placeholder: "military-time" %>
+  <%= f.input :close_hour, collection: (0..23).to_a, placeholder: "military-time" %>
   <%= f.submit %>
 <% end %>
 </div>
