@@ -8,7 +8,7 @@ class Restaurant < ApplicationRecord
   validates :user, presence: :true
   validates :name, presence: :true
   validates :location, uniqueness: :true
-  validates :capacity, numericality: { more_than_or_equal_to: 1,  only_integer: true }
+  validates :capacity, numericality: { greater_than_or_equal_to: 1,  only_integer: true }
   validates :open_hour, presence: :true
   validates :close_hour, presence: :true
 
