@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_191931) do
+
+ActiveRecord::Schema.define(version: 2019_03_21_192527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_191931) do
     t.integer "guests"
     t.time "time"
     t.string "name"
+    t.integer "rating"
     t.index ["restaurant_id"], name: "index_reservations_on_restaurant_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
@@ -31,7 +33,6 @@ ActiveRecord::Schema.define(version: 2019_03_21_191931) do
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.text "reviews"
     t.integer "capacity"
     t.integer "open_hour"
     t.integer "close_hour"

@@ -9,7 +9,6 @@ class ReservationsController < ApplicationController
   def show
     @reservation = Reservation.find(params[:id])
     authorize @reservation
-
   end
 
   def create
