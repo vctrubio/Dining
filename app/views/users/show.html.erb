@@ -1,19 +1,24 @@
-<h2>Welcome</h2>
-<%= @user.username %>
+<div class="container">
+
+  <h2>Welcome <%= @user.username %>!</h2>
 
 
+<div>
+  <h4>Your restarurants:</h4>
+  <% @user.restaurants.each do |restaurant| %>
+  <li><%= restaurant.name %></li>
+  <li><%= restaurant.location %></li>
+  <li><%= restaurant.reviews %></li>
+   <% end %>
+</div>
 
-<img src="<%= @user.photo %>" alt="[Profile picture if none]">
-<br>
-<h3>You're Restarurants in list:</h3>
-<% @user.restaurants.each do |restaurant| %>
-<li><%= restaurant.name%></li>
- <% end %>
+<!--  <%=image_tag(@user.photo) %> FALTA EST0-->
 
-<h3>And here you should see any reservations you may have,</h3>
-<p>or request to make a new reservation at you're fav restaurants</p>
+  <h3>And here you should see any reservations you may have,</h3>
 
-<%# #welcome username
-#show if you are a chef or not
-#shows your restarurants if you are a chef
-#shows any reservations made %>
+
+  <%# #welcome username
+  #show if you are a chef or not
+  #shows your restarurants if you are a chef
+  #shows any reservations made %>
+</div>
