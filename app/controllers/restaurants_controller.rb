@@ -4,7 +4,14 @@ class RestaurantsController < ApplicationController
   before_action :find_restaurant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @restaurants = policy_scope(Restaurant).where.not(latitude: nil, longitude: nil)
+    # search logic for index
+    if params[:query].present?
+      @restaurants = Restaurant.search_by_name_and_location(params[:query])
+    else
+      @restaurants = Restaurant.all
+    end
+
+    @restaurants = policy_scope(@restaurants).where.not(latitude: nil, longitude: nil)
     @active = user_signed_in?
     @markers = @restaurants.map do |restaurant|
       {
