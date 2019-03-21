@@ -16,9 +16,11 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
   end
 
   def new
+
     @restaurant = Restaurant.new
     authorize @restaurant
   end
