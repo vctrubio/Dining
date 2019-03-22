@@ -7,7 +7,11 @@ const loadDynamicBannerText = () => {
       typeSpeed: 50,
       loop: true
     }
-    
+
     var typed = new Typed("#typed-strings", options);
 }
 export { loadDynamicBannerText };
+
+console.log("test");
+
+loadDynamicBannerText();
