@@ -33,7 +33,10 @@
     </div>
    </div>
 
-<%= link_to "detroy me", restaurant_path(@restaurant), method: 'delete'  %>
+
+<% if current_user == @restaurant.user %>
+<%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete'  %>
+<% end %>
 
    <div class="bottom-section">
    <div>
