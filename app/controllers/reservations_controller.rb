@@ -25,6 +25,11 @@ class ReservationsController < ApplicationController
 
   def update
     @rating = Reservation.find(params[:id])
+    if @rating.update(rating_params)
+      redirect_to root_path
+    else
+      redirect_to restaurant_path(@restaurant)
+    end
   end
 
   private
@@ -35,6 +40,10 @@ class ReservationsController < ApplicationController
 
   def find_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
+  end
+
+  def rating_params
+    params.require(:reservation).permit(:rating)
   end
 
 end

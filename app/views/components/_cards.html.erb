@@ -6,18 +6,21 @@
       <%= link_to restaurant_path(restaurant) do %>
     <div class="card-trip">
         <%= cl_image_tag restaurant.photo%>
-        <%# default profil pic should be added %>
         <div class="card-trip-infos">
           <div>
             <h2><%= restaurant.name %></h2>
             <h3><%= restaurant.location %></h3>
             <span class="extra-details">
-              <div>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              </div>
+              <div id="stars">
+                <% restaurant.reservations.each do |reservation| %>
+                  <% if !(reservation.rating.nil?) %>
+                    <% reservation.rating.round.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                  <% end %>
+                  <% end %>
+                </div>
+
               <h4>opens: 8:00 - 22:00</h4>
             </span>
           </div>

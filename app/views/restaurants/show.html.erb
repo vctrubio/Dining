@@ -21,7 +21,7 @@
     <% if current_user.reservations.where(restaurant_id: @restaurant.id).empty?  %>
      <button type="button" class="btn btn-secondary" id="reserve-button">make a reservation!</button>
     <% else %>
-      <%= simple_form_for [@reservations.last] do |f| %>
+      <%= simple_form_for [@user_reservation] do |f| %>
         <%= f.input :rating, collection: (1..5).to_a %>
         <%= f.submit value: "Add your rating" %>
       <% end %>
