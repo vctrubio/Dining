@@ -24,7 +24,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @reservation = Reservation.new
-    @user_reservation = Reservation.find(current_user.id)
+    @user_reservation = current_user.reservations.where(restaurant_id: @restaurant.id).first
   end
 
   def new
