@@ -24,11 +24,11 @@ class RestaurantsController < ApplicationController
 
   def show
     @reservation = Reservation.new
+    @user_reservation = Reservation.find(current_user.id)
   end
 
   def new
-
-    @restaurant = Restaurant.new
+    @restaurant = Resta   urant.new
     authorize @restaurant
   end
 

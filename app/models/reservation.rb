@@ -4,5 +4,4 @@ class Reservation < ApplicationRecord
 
   validates :date, presence: true
   validates :rating, allow_nil: true, numericality: { only_integer: true }, inclusion: { in: [1, 2, 3, 4, 5] }
-
 end

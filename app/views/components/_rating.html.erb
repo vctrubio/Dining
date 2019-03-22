@@ -1,3 +1,5 @@
-<%= simple_form_for [@reservation] do |f| %>
-  <%= f.association :rating %>
-  <%= f.submit %>
+<!--<%= simple_form_for [@reservation] do |f| %>
+  <%= f.input :rating, collection: (1..5).to_a %>
+  <%= f.submit value: "Add your rating" %>
+  <% end %>
+ -->

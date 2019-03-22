@@ -23,6 +23,10 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def update
+    @rating = Reservation.find(params[:id])
+  end
+
   private
 
   def reservation_params
