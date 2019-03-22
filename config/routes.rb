@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :reservations, only: [ :new, :create]
   end
 
-  resources :reservations, only: [:show]
+  resources :reservations, only: [:show, :update]
 
 devise_for :users, controllers: {registrations: 'registrations'}
 

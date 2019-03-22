@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_03_22_213048) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.boolean "chef"
     t.string "photo", default: "https://res.cloudinary.com/dmeg8bow6/image/upload/v1542791113/02th-egg-person.jpg"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -14,10 +14,11 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-</div>
+
 <% else %>
+
 <%= render 'components/banner' %>
-<div class="container">
+<div class="container unblue">
   <div class="row">
     <%= render 'components/cards', restaurants: @restaurants  %>
     </div>

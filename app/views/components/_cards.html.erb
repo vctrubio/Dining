@@ -1,23 +1,22 @@
-
-<div class="container unblue">
-  <div class="row">
   <% restaurants.each do |restaurant| %>
   <div class="col-xs-12 col-sm-6 col-lg-4 remove-padding">
       <%= link_to restaurant_path(restaurant) do %>
     <div class="card-trip">
         <%= cl_image_tag restaurant.photo%>
-        <%# default profil pic should be added %>
         <div class="card-trip-infos">
           <div>
             <h2><%= restaurant.name %></h2>
             <h3><%= restaurant.location %></h3>
             <span class="extra-details">
-              <div>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              </div>
+              <div id="stars">
+                <% restaurant.reservations.each do |reservation| %>
+                  <% if !(reservation.rating.nil?) %>
+                    <% reservation.rating.round.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                  <% end %>
+                  <% end %>
+                </div>
               <h4 class="color-open"><%= restaurant.open_hour %>h - <span class="cerrado"><%= restaurant.close_hour %>h</span></h4>
             </span>
           </div>
@@ -26,6 +25,7 @@
       <% end %>
     </div>
     <% end %>
-</div>
-</div>
+<!-- </div> -->
+<!-- delete this -->
+
 

@@ -1,42 +1,50 @@
 <!-- <div class="container">
-  <div id="restaurant-photo">
+<div id="restaurant-photo">
 <%= cl_image_tag @restaurant.photo, height: 600, width: 600, crop: :fill %>
-  </div>
+</div>
 </div> -->
 
-     <%= render 'components/modal-reserve' %>
+<%= render 'components/modal-reserve' %>
 
 
 <div class="container restaurant-show">
 
+  <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo" %>
 
-    <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo" %>
-
-
-   <div class="restaurant-content">
-     <h1><%= @restaurant.name %></h1>
-     <h2><%= @restaurant.location %></h2>
+  <div class="non_pic_content">
+    <div class="restaurant-content">
+      <h1><%= @restaurant.name %></h1>
+      <h2><%= @restaurant.location %></h2>
       <h3>   seats available: <%= @restaurant.capacity %></h3>
-     <h3>open from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %></h3>
-     <button type="button" class="btn btn-secondary" id="reserve-button">make a reservation!</button>
+      <h3>open from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %></h3>
 
 
-   </div>
+   <% if current_user.reservations.where(restaurant_id: @restaurant.id).empty?  %>
+   <button type="button" class="btn btn-secondary" id="modal-trigger">make a reservation!</button>
+   <% elsif !@user_reservation.rating %>
+   <%= simple_form_for (@user_reservation) do |f| %>
+   <%= f.input :rating, collection: (1..5).to_a %>
+   <%= f.submit value: "Add your rating" %>
+   <% end %>
+   <% else %>
+      <div class="reviews">
+        <div id="stars">
+          <% current_user.reservations.each do |reservation| %>
+            <% reservation.rating %>
+          <% end %>
+          <% if rating = @restaurant.average_rating %>
+            <% rating.round.times do %>
+            <i class="fas fa-star"></i>
+            <% end %>
+          <% end %>
+        </div>
+   <% end %>
+ </div>
 
-   <div class="reviews">
-    <h4>rating</h4>
-    <div id="stars">
-      <% if rating = @restaurant.average_rating %>
-        <% rating.round.times do %>
-          <i class="fas fa-star"></i>
-        <% end %>
-      <% end %>
-    </div>
-   </div>
 
    <div class="bottom-section">
-   <h4 class="host-by">hosted by chef <%= @restaurant.user.username.capitalize %> </h4>
    <div>
+
 
     <%= link_to (cl_image_tag @restaurant.user.photo, class: "avatar"), user_path(@restaurant.user) %>
 
@@ -44,17 +52,19 @@
 
    </div>
    </div>
+
+
+    <% if current_user == @restaurant.user %>
+    <%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete'  %>
+    <% else %>
+  </div>
+  <div class="bottom-section">
+    <h4 class="host-by">hosted by <%= @restaurant.user.username.capitalize %> </h4>
+    <%= cl_image_tag @restaurant.user.photo, class: "avatar"%>
+  </div>
+  <% end %>
+</div>
 </div>
 
-<!--
-<%= link_to "set a reservation", new_restaurant_reservation_path(@restaurant) %>
-
-<%= link_to 'Back to home', restaurants_path %>
-
-<%= link_to 'Delete restaurant', restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you super duper sure?" }%>
- -->
-
-<!--   <%= link_to @restaurant.user.username.capitalize, user_path(@restaurant.user) %>
-      <img src="#" alt="" width="40px">
-      contact! <%= @restaurant.user.email %> -->
+</div>
 

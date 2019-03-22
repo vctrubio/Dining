@@ -8,42 +8,40 @@
 require 'faker'
 
 puts "Creating databasse for users x 5"
+
+Reservation.destroy_all
+Restaurant.destroy_all
 User.destroy_all
 
 victor = User.create(
     username: "victor",
     email: "victor@gmail.com",
-    password: "password",
-    chef: false
+    password: "password"
 )
 
 
 cath = User.create(
     username: "cath",
     email: "cath@gmail.com",
-    password: "password",
-    chef: true
+    password: "password"
 )
 
 micheal = User.create(
     username: "micheal",
     email: "michealjackson@gmail.com",
-    password: "password",
-    chef: true
+    password: "password"
 )
 
 orio = User.create(
     username: "orio",
     email: "orio@gmail.com",
-    password: "password",
-    chef: true
+    password: "password"
 )
 
 santiago = User.create(
     username: "santi",
     email: "santi@gmail.com",
-    password: "password",
-    chef: true
+    password: "password"
 )
 
 
@@ -51,7 +49,6 @@ puts "Completed creating 5 new users"
 puts "------------------------------"
 
 puts "Now creating Restaurants"
-Restaurant.destroy_all
 
 new_fondita = Restaurant.create(
     name: "La Nueva Fondita de mi Mama",
@@ -80,10 +77,8 @@ recent_fondita = Restaurant.create(
     capacity: 5,
 )
 
-
-
-
 puts "Now finished creating 3 restaurants"
+puts "Now creating 20 restaurants"
 
 20.times {
   restaurant = Restaurant.new(
@@ -94,8 +89,8 @@ puts "Now finished creating 3 restaurants"
     user: cath,
     capacity: 10,
     )
-  restaurant.save!  
+  restaurant.save!
 }
 
-puts "Now finished creating 13 restaurants"
+puts "Now finished creating 20 restaurants"
 

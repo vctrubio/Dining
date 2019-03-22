@@ -24,11 +24,11 @@ class RestaurantsController < ApplicationController
 
   def show
     @reservation = Reservation.new
+    @user_reservation = current_user.reservations.where(restaurant_id: @restaurant.id).first
   end
 
   def new
-
-    @restaurant = Restaurant.new
+    @restaurant = Resta   urant.new
     authorize @restaurant
   end
 
@@ -56,7 +56,7 @@ class RestaurantsController < ApplicationController
 
   def destroy
     @restaurant.destroy
-    redirect_to user_path
+    redirect_to root_path
   end
 
   private
