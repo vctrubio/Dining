@@ -37,10 +37,11 @@
    <div class="bottom-section">
    <h4 class="host-by">hosted by chef <%= @restaurant.user.username.capitalize %> </h4>
    <div>
-  
-    <%= cl_image_tag @restaurant.user.photo, class: "avatar"%>
-    
-     
+
+    <%= link_to (cl_image_tag @restaurant.user.photo, class: "avatar"), user_path(@restaurant.user) %>
+
+
+
    </div>
    </div>
 </div>

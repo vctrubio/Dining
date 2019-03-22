@@ -17,6 +17,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if  user_signed_in? %>
+      <span class="navbar-text">Welcome <%= current_user.username.capitalize %></span>
       <li class="nav-item <%= "active" if current_page?(root_path) %>">
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_192527) do
+ActiveRecord::Schema.define(version: 2019_03_22_213048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_192527) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.string "photo", default: "https://res.cloudinary.com/vvrruubb69e/image/upload/v1553192478/Screenshot_2019-03-21_at_12.21.10.png"
+    t.string "photo", default: "https://res.cloudinary.com/vvrruubb69e/image/upload/v1553290806/photo-1521017432531-fbd92d768814.jpg"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
