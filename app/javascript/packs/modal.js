@@ -15,9 +15,9 @@ modalClose.addEventListener('click', closeModal);
 
 
 const outsideClick = (e) => {
- if (e.target == modal) {
-   modal.style.display = 'none';
- }
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
 };
 
 window.addEventListener('click', outsideClick);
