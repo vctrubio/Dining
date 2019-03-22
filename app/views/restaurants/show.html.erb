@@ -33,13 +33,14 @@
     </div>
    </div>
 
+<%= link_to "detroy me", restaurant_path(@restaurant), method: 'delete'  %>
+
    <div class="bottom-section">
-   <h4 class="host-by">hosted by chef <%= @restaurant.user.username.capitalize %> </h4>
    <div>
-  
+
     <%= cl_image_tag @restaurant.user.photo, class: "avatar"%>
-    
-     
+
+
    </div>
    </div>
  </div>

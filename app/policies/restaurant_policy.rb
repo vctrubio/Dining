@@ -10,15 +10,15 @@ class RestaurantPolicy < ApplicationPolicy
   end
 
   def create?
-    user.chef == true
+    user
   end
 
   def update?
-    user.chef == true && record.user == user
+    record.user == user
   end
 
   def destroy?
-    user.chef == true && record.user == user
+    record.user == user
   end
 end
 
