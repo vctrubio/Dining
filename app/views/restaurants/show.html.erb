@@ -1,7 +1,7 @@
 <!-- <div class="container">
-  <div id="restaurant-photo">
+<div id="restaurant-photo">
 <%= cl_image_tag @restaurant.photo, height: 600, width: 600, crop: :fill %>
-  </div>
+</div>
 </div> -->
 
 <%= render 'components/modal-reserve' %>
@@ -11,13 +11,13 @@
 
   <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo" %>
 
-   <div class="non_pic_content">
-   <div class="restaurant-content">
-     <h1><%= @restaurant.name %></h1>
-     <h2><%= @restaurant.location %></h2>
+  <div class="non_pic_content">
+    <div class="restaurant-content">
+      <h1><%= @restaurant.name %></h1>
+      <h2><%= @restaurant.location %></h2>
       <h3>   seats available: <%= @restaurant.capacity %></h3>
-     <h3>open from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %></h3>
-     <button type="button" class="btn btn-secondary" id="modal-trigger">make a reservation!</button>
+      <h3>open from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %></h3>
+      <button type="button" class="btn btn-secondary" id="modal-trigger">make a reservation!</button>
 
    <% if current_user.reservations.where(restaurant_id: @restaurant.id).empty?  %>
    <button type="button" class="btn btn-secondary" id="reserve-button">make a reservation!</button>
@@ -42,39 +42,18 @@
  </div>
 
 
-
-<<<<<<< HEAD
-
-</div>
-<div class="bottom-section">
- <h4 class="host-by">hosted by chef <%= @restaurant.user.username.capitalize %> </h4>
- <div class="avatar" id="avatar-gray"></div>
-</div>
-=======
-<%= link_to "detroy me", restaurant_path(@restaurant), method: 'delete'  %>
-
    <div class="bottom-section">
    <div>
-
+    <% if current_user == @restaurant.user %>
+    <%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete'  %>
+    <% else %>
+  </div>
+  <div class="bottom-section">
+    <h4 class="host-by">hosted by <%= @restaurant.user.username.capitalize %> </h4>
     <%= cl_image_tag @restaurant.user.photo, class: "avatar"%>
-
-
-   </div>
-   </div>
- </div>
-
->>>>>>> 074c074e37662367f6d624f80092c326c8664111
+  </div>
+  <% end %>
 </div>
-
-<!--
-<%= link_to "set a reservation", new_restaurant_reservation_path(@restaurant) %>
-
-<%= link_to 'Back to home', restaurants_path %>
-
-<%= link_to 'Delete restaurant', restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you super duper sure?" }%>
--->
-
-<!--   <%= link_to @restaurant.user.username.capitalize, user_path(@restaurant.user) %>
-      <img src="#" alt="" width="40px">
-      contact! <%= @restaurant.user.email %> -->
+</div>
+</div>
 
