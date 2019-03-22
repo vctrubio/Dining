@@ -11,3 +11,7 @@ const loadDynamicBannerText = () => {
     var typed = new Typed("#typed-strings", options);
 }
 export { loadDynamicBannerText };
+
+
+loadDynamicBannerText();
+

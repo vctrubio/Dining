@@ -1,7 +1,8 @@
 const modal = document.getElementById('simple-modal')
-const modalButton = document.getElementById('reserve-button')
+const modalButton = document.getElementById('modal-trigger')
 const modalClose = document.getElementById('close')
 
+if ( modalButton != null) {
 const openModal = () => modal.style.display = 'block';
 
 modalButton.addEventListener('click', openModal);
@@ -20,3 +21,4 @@ const outsideClick = (e) => {
 };
 
 window.addEventListener('click', outsideClick);
+};

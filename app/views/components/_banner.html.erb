@@ -1,6 +1,12 @@
 
 <div class="container padding-override" >
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://res.cloudinary.com/vvrruubb69e/image/upload/v1553018299/banner3.jpg);">
-    <p><span id="typed-strings"></span></p>
+    <% if user_signed_in?  %>
+
+     <% else %>
+        <p><span id="typed-strings"></span></p>
+        <%= javascript_pack_tag 'banner' %>
+    <% end %>
+
   </div>
 </div>
