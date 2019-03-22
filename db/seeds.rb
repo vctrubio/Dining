@@ -8,6 +8,9 @@
 require 'faker'
 
 puts "Creating databasse for users x 5"
+
+Reservation.destroy_all
+Restaurant.destroy_all
 User.destroy_all
 
 victor = User.create(
@@ -46,7 +49,6 @@ puts "Completed creating 5 new users"
 puts "------------------------------"
 
 puts "Now creating Restaurants"
-Restaurant.destroy_all
 
 new_fondita = Restaurant.create(
     name: "La Nueva Fondita de mi Mama",
@@ -75,10 +77,8 @@ recent_fondita = Restaurant.create(
     capacity: 5,
 )
 
-
-
-
 puts "Now finished creating 3 restaurants"
+puts "Now creating 20 restaurants"
 
 20.times {
   restaurant = Restaurant.new(
@@ -92,5 +92,5 @@ puts "Now finished creating 3 restaurants"
   restaurant.save!
 }
 
-puts "Now finished creating 13 restaurants"
+puts "Now finished creating 20 restaurants"
 
