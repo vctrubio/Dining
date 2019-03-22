@@ -8,6 +8,7 @@
 
 
 <div class="container restaurant-show">
+
     <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo" %>
 
    <div class="non_pic_content">
@@ -34,7 +35,12 @@
 
    <div class="bottom-section">
    <h4 class="host-by">hosted by chef <%= @restaurant.user.username.capitalize %> </h4>
-   <div class="avatar" id="avatar-gray"></div>
+   <div>
+  
+    <%= cl_image_tag @restaurant.user.photo, class: "avatar"%>
+    
+     
+   </div>
    </div>
  </div>
 

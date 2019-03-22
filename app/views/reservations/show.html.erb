@@ -1,3 +1,4 @@
+
 <%= @reservation.restaurant.name %>
 <%= @reservation.name %>
 <%= @reservation.date.strftime("%e %b") %>
@@ -5,6 +6,6 @@
 <%= @reservation.time.min %>
 <%= @reservation.restaurant.location %>
 <%= @reservation.guests %>
-
+<%= render 'components/rating' %>
 <%= link_to 'Back to restaurant', restaurant_path(@reservation.restaurant) %>
 <%= link_to 'Back to home', restaurants_path %>
