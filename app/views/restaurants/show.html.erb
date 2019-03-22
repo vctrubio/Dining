@@ -19,21 +19,31 @@
       <h3>open from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %></h3>
       <button type="button" class="btn btn-secondary" id="modal-trigger">make a reservation!</button>
 
+   <% if current_user.reservations.where(restaurant_id: @restaurant.id).empty?  %>
+   <button type="button" class="btn btn-secondary" id="reserve-button">make a reservation!</button>
+   <% elsif !@user_reservation.rating %>
+   <%= simple_form_for (@user_reservation) do |f| %>
+   <%= f.input :rating, collection: (1..5).to_a %>
+   <%= f.submit value: "Add your rating" %>
+   <% end %>
+   <% else %>
+      <div class="reviews">
+        <div id="stars">
+          <% current_user.reservations.each do |reservation| %>
+            <% reservation.rating %>
+          <% end %>
+          <% if rating = @restaurant.average_rating %>
+            <% rating.round.times do %>
+            <i class="fas fa-star"></i>
+            <% end %>
+          <% end %>
+        </div>
+   <% end %>
+ </div>
 
-    </div>
 
-    <div class="reviews">
-      <h4>rating</h4>
-      <div id="stars">
-        <% if rating = @restaurant.average_rating %>
-        <% rating.round.times do %>
-        <i class="fas fa-star"></i>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-
-
+   <div class="bottom-section">
+   <div>
     <% if current_user == @restaurant.user %>
     <%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete'  %>
     <% else %>
@@ -45,3 +55,5 @@
   <% end %>
 </div>
 </div>
+</div>
+

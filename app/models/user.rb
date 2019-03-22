@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          #:omniauthable, :lockable
   has_many :restaurants, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, format: { with: /([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)/, message: 'please enter a valid e-mail' }
