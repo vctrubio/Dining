@@ -1,6 +1,5 @@
 
-<div class="container unblue">
-  <div class="row">
+  <!-- <div class="row"> -->
   <% @restaurants.each do |restaurant| %>
   <div class="col-xs-12 col-sm-6 col-lg-4 remove-padding">
       <%= link_to restaurant_path(restaurant) do %>
@@ -20,7 +19,7 @@
                   <% end %>
                   <% end %>
                 </div>
-              <h4>opens: 8:00 - 22:00</h4>
+              <h4>open <%= restaurant.open_hour%>:00 - <%= restaurant.close_hour %>:00 </h4>
             </span>
           </div>
         </div>
@@ -28,6 +27,6 @@
       <% end %>
     </div>
     <% end %>
-</div>
-</div>
+<!-- </div> -->
+
 
