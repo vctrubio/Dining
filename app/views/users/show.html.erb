@@ -11,14 +11,18 @@
   </div>
 
 
-<!--   <h3>And here you should see any reservations you may have,</h3>
+</div>
+
+
+<div class="container">
 
     <div>
-    <ol>
-      <%  @user.reservations.each do |reservations| %>
-      <li><%=  reservations.name %></li>
+      <ol>
+     <%  @user.reservations.each do |reservation| %>
+      <div class="alert alert-primary" role="alert">
+        <%= link_to "#{reservation.restaurant.name}", restaurant_path(reservation.restaurant)%>
+      </div>
       <% end %>
     </ol>
-  </div> -->
-
+  </div>
 </div>
