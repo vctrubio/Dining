@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-    @restaurant = Resta   urant.new
+    @restaurant = Restaurant.new
     authorize @restaurant
   end
 
