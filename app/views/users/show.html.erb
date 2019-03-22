@@ -1,18 +1,27 @@
-<div class="container">
+<div class="container cath">
 
-  <h2>Welcome <%= @user.username %>!</h2>
+  <div class="profile">
+    <h2 class="h2"><%= @user.username.capitalize %></h2>
+    <%= cl_image_tag @user.photo, class: "style_image" %>
+  </div>
 
+  <div class="resta">
+    <h5>Your restarurants</h5>
+    <%= render 'components/cards', restaurants: @user.restaurants  %>
+  </div>
 
-<div>
-  <h4>Your restarurants:</h4>
-  <% @user.restaurants.each do |restaurant| %>
-  <li><%= restaurant.name %></li>
-  <li><%= restaurant.location %></li>
-   <% end %>
 </div>
 
 
+<div class="container">
 
-  <h3>And here you should see any reservations you may have,</h3>
-
+    <div>
+      <ol>
+     <%  @user.reservations.each do |reservation| %>
+      <div class="alert alert-primary" role="alert">
+        <%= link_to "#{reservation.restaurant.name}", restaurant_path(reservation.restaurant)%>
+      </div>
+      <% end %>
+    </ol>
+  </div>
 </div>

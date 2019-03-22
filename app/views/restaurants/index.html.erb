@@ -2,16 +2,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
-      <div class="row unblue">
-        <%= render 'components/cards' %>
+      <div class="row">
+        <%= render 'components/cards', restaurants: @restaurants  %>
       </div>
     </div>
-    <div class="col-md-6"
-      id="map"
-      style="height: 100vh;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+
+    <div class="col-md-6 fixed"
+    id="map"
+    style="height: 100vh; position: fixed; right: 0;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 
@@ -20,9 +20,9 @@
 <%= render 'components/banner' %>
 <div class="container unblue">
   <div class="row">
-    <%= render 'components/cards' %>
-  </div>
-</div>
+    <%= render 'components/cards', restaurants: @restaurants  %>
+    </div>
+     </div>
 </div>
 <% end %>
 

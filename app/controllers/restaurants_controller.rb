@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
       @restaurants = Restaurant.all
     end
 
-    @restaurants = policy_scope(@restaurants).where.not(latitude: nil, longitude: nil)
+    @restaurants = policy_scope(@restaurants).all
     @active = user_signed_in?
     @markers = @restaurants.map do |restaurant|
       {
@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-    @restaurant = Resta   urant.new
+    @restaurant = Restaurant.new
     authorize @restaurant
   end
 

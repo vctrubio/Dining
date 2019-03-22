@@ -10,9 +10,12 @@ class UsersController < ApplicationController
 
   def edit
 
+
   end
 
+
   private
+
 
   def get_user
     @user = User.find(params[:id])

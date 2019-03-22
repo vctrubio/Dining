@@ -17,10 +17,10 @@
       <h2><%= @restaurant.location %></h2>
       <h3>   seats available: <%= @restaurant.capacity %></h3>
       <h3>open from: <%= @restaurant.open_hour %>h - to: <%= @restaurant.close_hour %></h3>
-      <button type="button" class="btn btn-secondary" id="modal-trigger">make a reservation!</button>
+
 
    <% if current_user.reservations.where(restaurant_id: @restaurant.id).empty?  %>
-   <button type="button" class="btn btn-secondary" id="reserve-button">make a reservation!</button>
+   <button type="button" class="btn btn-secondary" id="modal-trigger">make a reservation!</button>
    <% elsif !@user_reservation.rating %>
    <%= simple_form_for (@user_reservation) do |f| %>
    <%= f.input :rating, collection: (1..5).to_a %>
@@ -44,6 +44,16 @@
 
    <div class="bottom-section">
    <div>
+
+
+    <%= link_to (cl_image_tag @restaurant.user.photo, class: "avatar"), user_path(@restaurant.user) %>
+
+
+
+   </div>
+   </div>
+
+
     <% if current_user == @restaurant.user %>
     <%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete'  %>
     <% else %>
@@ -55,5 +65,6 @@
   <% end %>
 </div>
 </div>
+
 </div>
 
