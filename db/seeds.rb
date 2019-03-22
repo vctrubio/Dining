@@ -13,37 +13,32 @@ User.destroy_all
 victor = User.create(
     username: "victor",
     email: "victor@gmail.com",
-    password: "password",
-    chef: false
+    password: "password"
 )
 
 
 cath = User.create(
     username: "cath",
     email: "cath@gmail.com",
-    password: "password",
-    chef: true
+    password: "password"
 )
 
 micheal = User.create(
     username: "micheal",
     email: "michealjackson@gmail.com",
-    password: "password",
-    chef: true
+    password: "password"
 )
 
 orio = User.create(
     username: "orio",
     email: "orio@gmail.com",
-    password: "password",
-    chef: true
+    password: "password"
 )
 
 santiago = User.create(
     username: "santi",
     email: "santi@gmail.com",
-    password: "password",
-    chef: true
+    password: "password"
 )
 
 
@@ -94,7 +89,7 @@ puts "Now finished creating 3 restaurants"
     user: cath,
     capacity: 10,
     )
-  restaurant.save!  
+  restaurant.save!
 }
 
 puts "Now finished creating 13 restaurants"
