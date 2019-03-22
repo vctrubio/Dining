@@ -1,22 +1,22 @@
-const modal = document.getElementById('simple-modal')
-const modalButton = document.getElementById('reserve-button')
-const modalClose = document.getElementById('close')
+// const modal = document.getElementById('simple-modal')
+// const modalButton = document.getElementById('reserve-button')
+// const modalClose = document.getElementById('close')
 
-const openModal = () => modal.style.display = 'block';
+// const openModal = () => modal.style.display = 'block';
 
-modalButton.addEventListener('click', openModal);
-
-
-const closeModal = () => modal.style.display = 'none';
-
-modalClose.addEventListener('click', closeModal);
+// modalButton.addEventListener('click', openModal);
 
 
+// const closeModal = () => modal.style.display = 'none';
 
-const outsideClick = (e) => {
-  if (e.target == modal) {
-    modal.style.display = 'none';
-  }
-};
+// modalClose.addEventListener('click', closeModal);
 
-window.addEventListener('click', outsideClick);
+
+
+// const outsideClick = (e) => {
+//   if (e.target == modal) {
+//     modal.style.display = 'none';
+//   }
+// };
+
+// window.addEventListener('click', outsideClick);
