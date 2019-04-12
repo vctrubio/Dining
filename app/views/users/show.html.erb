@@ -1,20 +1,19 @@
 <div class="container cath">
-
   <div class="profile">
-    <h2 class="h2"><%= @user.username.capitalize %></h2>
     <%= cl_image_tag @user.photo, class: "style_image" %>
+    <h2 class="h2"><%= @user.username.capitalize %></h2>
   </div>
-
   <div class="resta">
-    <h5>Your restarurants</h5>
-    <%= render 'components/cards', restaurants: @user.restaurants  %>
-  </div>
-
+    <h3>Restarurants</h3>
+      <div class="row">
+        <%= render 'components/cards', restaurants: @user.restaurants  %>
+      </div>
+      </div>
+    </div>
 </div>
 
 
 <div class="container">
-
     <div>
       <ol>
      <%  @user.reservations.each do |reservation| %>
