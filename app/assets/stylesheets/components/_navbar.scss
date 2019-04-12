@@ -16,7 +16,7 @@
 
 
 .nav-item.active a{
-      color: #0069d9 !important;
+  color: #0069d9 !important;
 }
 
 .welcome {
@@ -26,3 +26,7 @@
 .search {
   width: 400px;
 }
+
+.navbar-light .navbar-text {
+    color: rgb(75, 75, 75);
+  }
