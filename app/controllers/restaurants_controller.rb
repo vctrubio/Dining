@@ -17,7 +17,8 @@ class RestaurantsController < ApplicationController
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
-        image_url: helpers.asset_url('fork.png')
+        image_url: helpers.asset_url('fork.png'),
+        infoWindow: render_to_string(partial: "components/infowindow", locals: { restaurant: restaurant })
       }
     end
   end
