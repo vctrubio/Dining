@@ -84,3 +84,9 @@ padding-top: 3px;
 padding-left: 10px;
 }
 
+
+ @media screen and (max-width: 776px) {
+    .fixed {
+      display: none;
+    }
+    }

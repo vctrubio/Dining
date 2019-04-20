@@ -1,5 +1,5 @@
   <% restaurants.each do |restaurant| %>
-  <div class="col-sm-12 col-sm-6 col-lg-4 remove-padding">
+  <div class="col-sm-12 col-sm-6 col-lg-4 remove-padding" id="card<%= restaurant.id %>" >
       <%= link_to restaurant_path(restaurant) do %>
     <div class="card-trip">
         <%= cl_image_tag restaurant.photo%>
