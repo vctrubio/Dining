@@ -6,9 +6,9 @@ class RestaurantsController < ApplicationController
   def index
     # search logic for index
     if params[:query].present?
-      @restaurants = Restaurant.search_by_name_and_location(params[:query])
+      @restaurants = Restaurant.search_by_name_and_location(params[:query]).page(params[:page])
     else
-      @restaurants = Restaurant.all
+      @restaurants = Restaurant.order(:name).page(params[:page])
     end
 
     @restaurants = policy_scope(@restaurants).all

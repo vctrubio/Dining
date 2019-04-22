@@ -89,3 +89,28 @@ a {
     color: black;
   }
 }
+
+.pagination {
+  padding-top: 3.5em;
+}
+
+@media screen and (max-width: 776px) {
+    .pagination {
+      padding-top: 5em;
+      font-size: 0.8rem;
+      padding-bottom: 3em;
+    }
+    }
+
+@media screen and (max-width: 360px) {
+    .pagination {
+      padding-top: 5em;
+      font-size: 0.6rem;
+      padding-bottom: 3em;
+    }
+    }
+
+.pagination-nav {
+  margin-left: auto;
+  margin-right: auto;
+}

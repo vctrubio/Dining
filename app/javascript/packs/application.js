@@ -22,6 +22,7 @@ import { toggleFooter } from "./footer";
 import { initMapbox } from './mapbox';
 import {openModal} from './modal';
 import {closeModal} from './modal';
+import {initAutocomplete} from '../plugins/init_autocomplete';
 
 console.log('Hello World from Webpacker')
 
@@ -29,5 +30,6 @@ console.log('Hello World from Webpacker')
 
 initMapbox();
 toggleFooter();
+initAutocomplete();
 //loadDynamicBannerText();
 
