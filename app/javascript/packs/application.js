@@ -23,13 +23,29 @@ import { initMapbox } from './mapbox';
 import {openModal} from './modal';
 import {closeModal} from './modal';
 import {initAutocomplete} from '../plugins/init_autocomplete';
+import flatpickr from "flatpickr";
+import 'flatpickr/dist/flatpickr.min.css'
 
-console.log('Hello World from Webpacker')
 
 
 
 initMapbox();
 toggleFooter();
 initAutocomplete();
+const element = document.getElementById("date-selector")
+flatpickr("#datepicker");
+flatpickr("#timepicker",{
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    minDate: "16:00",
+    maxDate: "22:30",
+})
+
+flatpickr(".timepicker",{
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+})
 //loadDynamicBannerText();
 

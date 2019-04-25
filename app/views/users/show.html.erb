@@ -1,4 +1,4 @@
-<div class="container cath">
+<!-- <div class="container cath">
   <div class="profile">
     <%= cl_image_tag @user.photo, class: "style_image" %>
     <h2 class="h2"><%= @user.username.capitalize %></h2>
@@ -23,4 +23,31 @@
       <% end %>
     </ol>
   </div>
+</div> -->
+
+<div class="user-show-layout">
+  <div class="user-box">
+    <div class="user-show-avatar">
+      <h2><%= @user.username.capitalize %></h2>
+      <%= cl_image_tag @user.photo, class: "style_image" %>
+      <div class="user-description-content"><p>user discription will go here, yada yada yada!</p></div>
+    </div>
+</div>
+
+<div class="right-side-content">
+  <div class="user-show-card-container">
+    <div class="row  "><p class="your-restaurants">your restaurants</p></div>
+    <div class="row"><%= render 'components/user-cards', restaurants: @user.restaurants  %>
+
+    </div>
+  </div>
+
+ <%  @user.reservations.each do |reservation| %>
+  <span class="user-show-reservations mb-1 border-bottom border-danger">
+    <div class="pr-5 " ><%= reservation.restaurant.name %></div>
+    <div class="pr-5" ><%= reservation.restaurant.location %></div>
+    <div><%= reservation.date.strftime(" %m/%d/%Y") %> <%= reservation.time.strftime("%H:%M ") %></div>
+    </span>
+  <% end %>
+
 </div>

@@ -13,7 +13,7 @@
       </div>
       <h2>Location: <%= @restaurant.location %></h2>
       <h3>Seats available: <span class="res-capacity"> <%= @restaurant.capacity %></span></h3>
-      <h3>Open from: <%= @restaurant.open_hour %>h to <%= @restaurant.close_hour %></h3>
+      <h3>Open from: <%= @restaurant.open_hour.strftime("%H:%M ") %> to <%= @restaurant.close_hour.strftime("%H:%M ") %></h3>
 
       <% if current_user == @restaurant.user %>
        <%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete', class: "btn btn-danger"  %>

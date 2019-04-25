@@ -50,42 +50,14 @@ puts "------------------------------"
 
 puts "Now creating Restaurants"
 
-new_fondita = Restaurant.create(
-    name: "La Nueva Fondita de mi Mama",
-    location: "Campeche 234",
-    open_hour: 11,
-    close_hour: 23,
-    user: orio,
-    capacity: 10,
-)
-
-old_fondita = Restaurant.create(
-    name: "La Antigua Casa de Juanita",
-    location: "Campeche 101",
-    open_hour: 12,
-    close_hour: 23,
-    user: santiago,
-    capacity: 20,
-)
-
-recent_fondita = Restaurant.create(
-    name: "four",
-    location: "Roma norte",
-    open_hour: 13,
-    close_hour: 23,
-    user: cath,
-    capacity: 5,
-)
-
-puts "Now finished creating 3 restaurants"
 puts "Now creating 20 restaurants"
 
 20.times {
   restaurant = Restaurant.new(
     name: "#{Faker::Restaurant.name}",
     location: "#{Faker::Address.city}",
-    open_hour: 13,
-    close_hour: 23,
+    open_hour: "13:00",
+    close_hour: "23:00",
     user: cath,
     capacity: 10,
     )

@@ -17,7 +17,7 @@
                   <% end %>
                   <% end %>
                 </div>
-              <h4 class="color-open"><%= restaurant.open_hour %>h to <span class="color-open"><%= restaurant.close_hour %>h</span></h4>
+              <h4 class="color-open"><%= restaurant.open_hour.strftime("%H:%M ") %> to <span class="color-open"><%= restaurant.close_hour.strftime("%H:%M ") %></span></h4>
             </span>
           </div>
         </div>

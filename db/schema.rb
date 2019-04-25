@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_22_213048) do
+ActiveRecord::Schema.define(version: 2019_04_24_183532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,14 +33,14 @@ ActiveRecord::Schema.define(version: 2019_03_22_213048) do
     t.string "name"
     t.string "location"
     t.integer "capacity"
-    t.integer "open_hour"
-    t.integer "close_hour"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.string "photo", default: "https://res.cloudinary.com/vvrruubb69e/image/upload/v1553290806/photo-1521017432531-fbd92d768814.jpg"
+    t.time "open_hour"
+    t.time "close_hour"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
