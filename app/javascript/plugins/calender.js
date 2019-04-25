@@ -7,7 +7,6 @@ export const calender = () => {
   const element = document.getElementById("date-selector")
   const openHour = moment.utc(document.getElementById("reserve-open-hour").dataset.open_hour, "YYYY-MM-DD HH:mm:ss")
   const closeHour = moment.utc(document.getElementById("reserve-close-hour").dataset.close_hour, "YYYY-MM-DD HH:mm:ss")
-  console.log(moment(openHour).format("HH:mm"))
   flatpickr("#datepicker");
   flatpickr("#timepicker",{
     enableTime: true,
