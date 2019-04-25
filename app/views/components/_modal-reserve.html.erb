@@ -1,5 +1,7 @@
 <div class="reserve-modal" id="simple-modal">
   <div class="reserve-modal-content">
+    <div data-open_hour="<%= @restaurant.open_hour %>" id="reserve-open-hour"></div>
+       <div data-close_hour="<%= @restaurant.close_hour %>" id="reserve-close-hour"></div>
     <span class="close" id="close">&times</span>
    <%= simple_form_for [@restaurant, @reservation] do |f| %>
     <%= f.text_field :name, :placeholder => 'Name for reservation'  %>
@@ -8,6 +10,5 @@
     <%= f.text_field :guests, :placeholder => 'Number of guests' %>
     <%= f.submit %>
 <% end %>
-
   </div>
 </div>

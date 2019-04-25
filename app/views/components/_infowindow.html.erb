@@ -8,5 +8,5 @@
 
   <div class="restaurant-infowindow-location"><h3><%= restaurant.location %></h3></div>
 
-  <span class="restaurant-infowindow-hours"> open from <%= restaurant.open_hour %>h till <%= restaurant.close_hour %>h </span>
+  <span class="restaurant-infowindow-hours"> open from <%= restaurant.open_hour.strftime("%H:%M ") %> till <%= restaurant.close_hour.strftime("%H:%M ") %> </span>
 <% end %>
