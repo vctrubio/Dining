@@ -30,3 +30,17 @@
 .navbar-light .navbar-text {
     color: rgb(75, 75, 75);
   }
+
+ @media screen and (max-width: 770px) {
+    .navbar-lewagon .navbar-brand img {
+      display: none;
+    }
+
+    .welcome {
+  padding: 6px, 20px, 0, 0;
+}
+
+.search {
+  width: 250px;
+}
+    }
