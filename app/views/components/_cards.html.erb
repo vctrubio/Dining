@@ -9,6 +9,11 @@
             <h3><%= restaurant.location %></h3>
             <span class="extra-details">
               <div id="stars">
+                <% if restaurant.reservations.empty? %>
+                  <% 5.times do  %>
+                 <i class="far fa-star"></i>
+                 <% end %>
+                <% end %>
                 <% restaurant.reservations.each do |reservation| %>
                   <% if !(reservation.rating.nil?) %>
                     <% reservation.rating.round.times do %>
