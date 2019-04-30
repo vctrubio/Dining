@@ -24,14 +24,15 @@
 }
 
 .search {
-  width: 400px;
+  width: 60vw;
+  padding-right: 10px;
 }
 
 .navbar-light .navbar-text {
     color: rgb(75, 75, 75);
   }
 
- @media screen and (max-width: 770px) {
+ @media screen and (max-width: 800px) {
     .navbar-lewagon .navbar-brand img {
       display: none;
     }
