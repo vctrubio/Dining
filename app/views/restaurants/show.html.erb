@@ -1,4 +1,6 @@
 <%= render 'components/modal-reserve' %>
+<%= render 'components/add-description-modal.html' %>
+
 
 <div class="container restaurant-show">
 <div class="contact1">
@@ -14,9 +16,14 @@
       <h2>Location: <%= @restaurant.location %></h2>
       <h3>Seats available: <span class="res-capacity"> <%= @restaurant.capacity %></span></h3>
       <h3>Open from: <%= @restaurant.open_hour.strftime("%H:%M ") %> to <%= @restaurant.close_hour.strftime("%H:%M ") %></h3>
-
+      <div class="restaurant-description"><%= @restaurant.description %></div>
       <% if current_user == @restaurant.user %>
        <%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete', class: "btn btn-danger"  %>
+       <% if @restaurant.description.nil?  %>
+        <div type="button" class="btn btn-warning" data-toggle="modal" data-target="#add-reservation">add a description</div>
+        <% else %>
+        <div type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#add-reservation">edit description</div>
+       <% end %>
       <% elsif current_user.reservations.where(restaurant_id: @restaurant.id).empty?  %>
         <button type="button" class="btn btn-primary" id="modal-trigger">Make a reservation!</button>
       <% elsif !@user_reservation.rating %>
