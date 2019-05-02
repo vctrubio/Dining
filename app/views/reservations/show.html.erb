@@ -1,14 +1,26 @@
+<div class="reservations-container">
+  <div><p>your reservation has been confirmed!</p></div>
+  <br>
+  <div>reservation at:</div>
+  <div><%= @reservation.restaurant.name %></div>
+  <div>name of reservation:</div>
+  <% if !@reservation.name.nil? %>
+    <%= @reservation.name %>
+  <% end %>
 
-<%= @reservation.restaurant.name %>
-<%= @reservation.name %>
-<%= @reservation.date.strftime("%e %b") %>
-<%= @reservation.time.hour %>
-<%= @reservation.time.min %>
+<div>at:</div>
+<div>
+  <%= @reservation.date.strftime("%e %b") %>
+  <%= @reservation.time.hour %>:
+  <%= @reservation.time.min %>0
+</div>
+<div>at:</div>
 <%= @reservation.restaurant.location %>
-<%= @reservation.guests %>
-<%= link_to 'Back to restaurant', restaurant_path(@reservation.restaurant) %>
-<%= link_to 'Back to home', restaurants_path %>
-
+<div>for:</div>
+<div> <%= @reservation.guests %> </div>
+<%= link_to 'Back to restaurant', restaurant_path(@reservation.restaurant), :class => "btn btn-primary my-2" %>
+<%= link_to 'Back to home', restaurants_path, :class => "btn btn-secondary" %>
+</div>
 
 
 

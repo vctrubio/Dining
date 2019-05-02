@@ -5,6 +5,7 @@
     "@mapbox/mapbox-gl-geocoder": "^3.1.6",
     "@rails/webpacker": "3.5",
     "bootstrap": "^4.3.1",
+    "bulma": "^0.7.4",
     "flatpickr": "^4.5.7",
     "jquery": "^3.4.0",
     "jquery-bar-rating": "^1.2.2",

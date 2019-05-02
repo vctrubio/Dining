@@ -1,3 +1,12 @@
 // Place all the styles related to the reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.reservations-container {
+ display: flex;
+ margin: 0 auto;
+ width: 35%;
+ flex-direction:  column;
+ justify-content: flex-start;
+ align-items: center;
+}
