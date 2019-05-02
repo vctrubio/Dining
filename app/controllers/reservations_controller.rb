@@ -16,11 +16,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.restaurant = @restaurant
     authorize @reservation
-    if @reservation.save!
-      redirect_to reservation_path(@reservation)
-    else
-      render :new
-    end
+    @reservation.save!
   end
 
   def update

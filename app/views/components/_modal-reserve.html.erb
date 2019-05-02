@@ -8,7 +8,7 @@
     <%= f.input :date, as: :string,  input_html: { id: 'datepicker'} %>
     <%= f.input :time, as: :string, input_html: {id: 'timepicker'} %>
     <%= f.text_field :guests, :placeholder => 'Number of guests' %>
-    <%= f.button :submit, "make a reservation", class: "btn btn-primary" %>
+    <%= f.button :submit, "make a reservation", class: "btn btn-primary", id: "reservation-submit" %>
 <% end %>
   </div>
 </div>

@@ -25,7 +25,7 @@ import {closeModal} from './modal';
 import {initAutocomplete} from '../plugins/init_autocomplete';
 import {calender} from '../plugins/calender';
 import { initStarRating } from '../plugins/init_star_rating';
-
+import { reservation  } from './reservations';
 
 
 
@@ -34,5 +34,6 @@ toggleFooter();
 initAutocomplete();
 calender();
 initStarRating();
+reservation();
 //loadDynamicBannerText();
 
