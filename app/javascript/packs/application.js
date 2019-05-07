@@ -26,7 +26,7 @@ import {initAutocomplete} from '../plugins/init_autocomplete';
 import {calender} from '../plugins/calender';
 import { initStarRating } from '../plugins/init_star_rating';
 import { reservation  } from './reservations';
-
+import { forms} from './forms'
 
 
 initMapbox();
@@ -34,6 +34,7 @@ toggleFooter();
 initAutocomplete();
 calender();
 initStarRating();
+forms();
 reservation();
 //loadDynamicBannerText();
 
