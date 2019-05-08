@@ -3,7 +3,7 @@
     <div data-open_hour="<%= @restaurant.open_hour %>" id="reserve-open-hour"></div>
        <div data-close_hour="<%= @restaurant.close_hour %>" id="reserve-close-hour"></div>
     <span class="close text-danger" id="close">&times</span>
-   <%= simple_form_for [@restaurant, @reservation] do |f| %>
+   <%= simple_form_for [@restaurant, @reservation], validate: true do |f| %>
     <%= f.input :name, :placeholder => 'Name for reservation', :class => "center-reservation-name"  %>
     <%= f.input :date, as: :string,  input_html: { id: 'datepicker'} %>
     <%= f.input :time, as: :string, input_html: {id: 'timepicker'} %>

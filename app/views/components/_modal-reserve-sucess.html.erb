@@ -9,7 +9,7 @@
   <div>
     <%= current_user.reservations.last.date.strftime("%e %b") %>
   </div>
-  <div>address:</div>
+  <div>at:</div>
   <%= current_user.reservations.last.restaurant.location %>
   <div>for:</div>
   <div> <%= current_user.reservations.last.guests %> </div>

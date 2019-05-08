@@ -21,6 +21,7 @@ gem 'webpacker', '~> 3.5.5'
 # gem 'mini_racer', platforms: :ruby
 
 #added by me
+gem "jquery-rails"
 gem 'simple_form'
 gem 'geocoder'
 gem 'devise'
@@ -28,6 +29,8 @@ gem 'pundit'
 gem 'carrierwave', '~> 1.2'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
