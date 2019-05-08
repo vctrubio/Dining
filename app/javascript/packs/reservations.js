@@ -5,8 +5,7 @@ export const reservation = () => {
   const submitButton = reservationForm.querySelector("#reservation-submit")
 
   reservationForm.addEventListener('submit', (event) => {
-    reservationModal.display = 'none';
+    reservationModal.style.display = 'none';
     reservationSuccesForm.style.display = 'flex'
-    console.log("what")
   });
 }

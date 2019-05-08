@@ -1,14 +1,15 @@
-<% if !@reservation.nil?  %>
+<% if !current_user.reservations.empty?  %>
 
   <div class="reserve-sucess-modal" id="reservation-sucess">
     <div class="reservations-container" >
       <div><p>your reservation has been confirmed!</p></div>
 
   <div>at:</div>
+  <div><%= current_user.reservations.last.restaurant.name %></div>
   <div>
     <%= current_user.reservations.last.date.strftime("%e %b") %>
   </div>
-  <div>at:</div>
+  <div>address:</div>
   <%= current_user.reservations.last.restaurant.location %>
   <div>for:</div>
   <div> <%= current_user.reservations.last.guests %> </div>
@@ -16,3 +17,4 @@
   <%= link_to 'Back to home', restaurants_path, :class => "btn btn-secondary"%>
   </div>
     </div>
+<% end %>
