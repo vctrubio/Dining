@@ -25,8 +25,7 @@ import {closeModal} from './modal';
 import {initAutocomplete} from '../plugins/init_autocomplete';
 import {calender} from '../plugins/calender';
 import { initStarRating } from '../plugins/init_star_rating';
-
-
+import { initEasyAutocomplete } from '../plugins/init_easy_autocomplete';
 
 
 initMapbox();
@@ -34,5 +33,6 @@ toggleFooter();
 initAutocomplete();
 calender();
 initStarRating();
+initEasyAutocomplete();
 //loadDynamicBannerText();
 
