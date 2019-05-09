@@ -27,7 +27,7 @@ export const initEasyAutocomplete = () => {
       onClickEvent: function() {
         const id = $("#query").getSelectedItemData().id
         const url = `/restaurants/${id}`
-        Turbolinks.visit(url)
+        window.location = url
       } ,
     }
   };
