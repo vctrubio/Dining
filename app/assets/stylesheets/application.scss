@@ -5,7 +5,8 @@
 @import "reservations";
 @import "restaurants";
 @import "./components/profile";
-
+@import "easy-autocomplete";
+@import "easy-autocomplete.themes";
 
 body {
   padding-top: 70px;

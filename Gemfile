@@ -28,6 +28,7 @@ gem 'pundit'
 gem 'carrierwave', '~> 1.2'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'gon'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

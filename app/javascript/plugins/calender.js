@@ -4,22 +4,25 @@ var moment = require('moment');
 moment().format();
 
 export const calender = () => {
-  const element = document.getElementById("date-selector")
-  const openHour = moment.utc(document.getElementById("reserve-open-hour").dataset.open_hour, "YYYY-MM-DD HH:mm:ss")
-  const closeHour = moment.utc(document.getElementById("reserve-close-hour").dataset.close_hour, "YYYY-MM-DD HH:mm:ss")
-  flatpickr("#datepicker");
-  flatpickr("#timepicker",{
-    enableTime: true,
-    noCalendar: true,
-    dateFormat: "H:i",
-    minDate: `${moment(openHour).format("HH:mm")}`,
-    maxDate: `${moment(closeHour).format("HH:mm")}`,
-  })
+  const reserveForm = document.getElementById("simple-modal")
+  if ( null != reserveForm ) {
+    const element = reserveForm.querySelector("#date-selector")
+    const openHour = moment.utc(reserveForm.querySelector("#reserve-open-hour").dataset.open_hour, "YYYY-MM-DD HH:mm:ss")
+    const closeHour = moment.utc(reserveForm.querySelector("#reserve-close-hour").dataset.close_hour, "YYYY-MM-DD HH:mm:ss")
 
-  flatpickr(".timepicker",{
-    enableTime: true,
-    noCalendar: true,
-    dateFormat: "H:i",
-  })
+    flatpickr("#datepicker");
+    flatpickr("#timepicker",{
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+      minDate: `${moment(openHour).format("HH:mm")}`,
+      maxDate: `${moment(closeHour).format("HH:mm")}`,
+    })
 
+    flatpickr(".timepicker",{
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+    })
+  }
 }
