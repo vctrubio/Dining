@@ -2,7 +2,7 @@ import EasyAutocomplete from './jquery.easy-autocomplete';
 import $ from 'jquery';
 
 export const initEasyAutocomplete = () => {
-  const search = document.getElementById("query")
+
   var options = {
     data: gon.restaurant_results,
 
@@ -25,7 +25,9 @@ export const initEasyAutocomplete = () => {
       },
       maxNumberOfElements: 5,
       onClickEvent: function() {
-        console.log(search)
+        const id = $("#query").getSelectedItemData().id
+        const url = `/restaurants/${id}`
+        Turbolinks.visit(url)
       } ,
     }
   };
