@@ -4,9 +4,14 @@ class RestaurantsController < ApplicationController
   before_action :find_restaurant, only: [:show, :edit, :update, :destroy]
 
   def index
+      @restaurant_results = Restaurant.all
+      gon.restaurant_results = @restaurant_results
     # search logic for index
     if params[:query].present?
       @restaurants = Restaurant.search_by_name_and_location(params[:query]).page(params[:page])
+
+
+
     else
       @restaurants = Restaurant.order(:name).page(params[:page])
     end
@@ -21,6 +26,7 @@ class RestaurantsController < ApplicationController
         infoWindow: render_to_string(partial: "components/infowindow", locals: { restaurant: restaurant })
       }
     end
+
   end
 
   def show
@@ -71,4 +77,5 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
   end
+
 end

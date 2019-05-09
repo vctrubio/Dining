@@ -22,7 +22,9 @@
     <%= yield %>
 
     <%= render 'components/footer' %>
+   <%= Gon::Base.render_data %>
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
+
   </body>
 </html>
