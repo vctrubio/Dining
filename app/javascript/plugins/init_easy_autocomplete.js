@@ -1,8 +1,12 @@
-import autocomplete from 'autocomplete.js';
-
+import EasyAutocomplete from './jquery.easy-autocomplete';
+import $ from 'jquery';
 
 export const initEasyAutocomplete = () => {
-   console.log("test")
+ var options = {
+  data: ["blue", "green", "pink", "red", "yellow"]
+};
+
+$("#query").easyAutocomplete(options);
 
 };
 
