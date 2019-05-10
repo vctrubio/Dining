@@ -1,53 +1,58 @@
 <%= render 'components/modal-reserve' %>
 <%= render 'components/add-description-modal.html' %>
+<%= render 'components/modal-restaurant-edit' %>
 
 
 <div class="container restaurant-show">
-<div class="contact1">
-  <div class="container-contact1">
-  <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo" %>
+  <div class="contact1">
+    <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo-mobile" %>
 
-  <div class="non_pic_content">
-    <div class="restaurant-content">
-      <div class="name-photo">
-      <h1><%= @restaurant.name %></h1>
-        <%= link_to (cl_image_tag @restaurant.user.photo, class: "avatar-hosted"), user_path(@restaurant.user) %>
-      </div>
-      <h2>Location: <%= @restaurant.location %></h2>
-      <h3>Seats available: <span class="res-capacity"> <%= @restaurant.capacity %></span></h3>
-      <h3>Open from: <%= @restaurant.open_hour.strftime("%H:%M ") %> to <%= @restaurant.close_hour.strftime("%H:%M ") %></h3>
-      <div class="restaurant-description"><%= @restaurant.description %></div>
-      <% if current_user == @restaurant.user %>
-       <%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete', class: "btn btn-danger"  %>
-       <% if @restaurant.description.nil?  %>
-        <div type="button" class="btn btn-warning" data-toggle="modal" data-target="#add-reservation">add a description</div>
-        <% else %>
-        <div type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#add-reservation">edit description</div>
-       <% end %>
-      <% elsif current_user.reservations.where(restaurant_id: @restaurant.id).empty?  %>
-        <button type="button" class="btn btn-primary" id="modal-trigger">Make a reservation!</button>
-      <% elsif !@user_reservation.rating %>
-        <%= simple_form_for (@user_reservation) do |f| %>
-        <%= f.input :rating, collection: (1..5).to_a %>
-        <%= f.submit value: "Add your rating" %>
-      <% end %>
-      <% else %>
-      <div class="reviews">
-        <div id="stars">
-          <% current_user.reservations.each do |reservation| %>
-           <% reservation.rating %>
+    <div class="container-contact1">
+      <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo" %>
+
+      <div class="non_pic_content">
+        <div class="restaurant-content">
+          <div class="name-photo">
+            <h1><%= @restaurant.name %></h1>
+            <%= link_to (cl_image_tag @restaurant.user.photo, class: "avatar-hosted"), user_path(@restaurant.user) %>
+          </div>
+          <h2>Location: <%= @restaurant.location %></h2>
+          <h3>Seats available: <span class="res-capacity"> <%= @restaurant.capacity %></span></h3>
+          <h3>Open from: <%= @restaurant.open_hour.strftime("%H:%M ") %> to <%= @restaurant.close_hour.strftime("%H:%M ") %></h3>
+          <div class="restaurant-description"><%= @restaurant.description %></div>
+          <% if current_user == @restaurant.user %>
+          <%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete', class: "btn btn-danger"  %>
+          <div type="button" class="btn btn-secondary" data-toggle="modal" data-target="#edit-restaurant">edit info</div>
+
+          <% if @restaurant.description.nil?  %>
+          <div type="button" class="btn btn-warning add-description " data-toggle="modal" data-target="#add-reservation">add a description</div>
+          <% else %>
+          <div type="button" class="btn btn-warning add-description" data-toggle="modal" data-target="#add-reservation">edit description</div>
           <% end %>
-          <% if rating = @restaurant.average_rating %>
-            <% rating.round.times do %>
-            <i class="fas fa-star"></i>
+          <% elsif current_user.reservations.where(restaurant_id: @restaurant.id).empty?  %>
+          <button type="button" class="btn btn-primary" id="modal-trigger">Make a reservation!</button>
+          <% elsif !@user_reservation.rating %>
+          <%= simple_form_for (@user_reservation) do |f| %>
+          <%= f.input :rating, collection: (1..5).to_a %>
+          <%= f.submit value: "Add your rating" %>
+          <% end %>
+          <% else %>
+          <div class="reviews">
+            <div id="stars">
+              <% current_user.reservations.each do |reservation| %>
+              <% reservation.rating %>
+              <% end %>
+              <% if rating = @restaurant.average_rating %>
+              <% rating.round.times do %>
+              <i class="fas fa-star"></i>
+              <% end %>
+              <% end %>
+            </div>
             <% end %>
-          <% end %>
+          </div>
         </div>
-        <% end %>
       </div>
-  </div>
-  </div>
-</div>
+    </div>
 
-</div>
+  </div>
 
