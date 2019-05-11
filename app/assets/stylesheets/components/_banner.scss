@@ -32,3 +32,16 @@
   padding-right: 26px;
 
 }
+
+@media screen and (max-width: 776px) {
+    .banner p {
+      font-size: 24px;
+      color: white;
+      opacity: .9;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-weight: bold;
+      position: relative;
+      top: 138px;
+      left: -11px;
+    }
+    }
