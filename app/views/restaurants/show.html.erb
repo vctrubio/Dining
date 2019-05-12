@@ -5,10 +5,10 @@
 
 <div class="container restaurant-show">
   <div class="contact1">
-    <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo-mobile" %>
+    <%= cl_image_tag @restaurant.photo, :quality=>"auto", :fetch_format=>:auto , :class => "restaurant-photo-mobile" %>
 
     <div class="container-contact1">
-      <%= cl_image_tag @restaurant.photo, :class => "restaurant-photo" %>
+      <%= cl_image_tag @restaurant.photo, :quality=>"auto", :fetch_format=>:auto, :class => "restaurant-photo" %>
 
       <div class="non_pic_content">
         <div class="restaurant-content">
