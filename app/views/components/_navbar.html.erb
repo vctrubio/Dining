@@ -28,7 +28,16 @@
 <!--       <li class="nav-item <%= "active" if current_page?(restaurants_path) %>">
         <%= link_to "Messages", "#", class: "nav-link" %>
       </li> -->
-      <li class="nav-item dropdown">
+
+      <li class="nav-item dropdown ">
+        <%= link_to "Profile", user_path(current_user), method:'get', class: "nav-link navbar-avatar-mobile" %>
+        <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "nav-link navbar-avatar-mobile" %>
+
+      </li>
+
+
+
+      <li class="nav-item dropdown navbar-avatar">
         <%=  cl_image_tag current_user.photo, class: "avatar dropdown-toggle", crop: :scale, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Profile", user_path(current_user), method:'get', class: "dropdown-item" %>
