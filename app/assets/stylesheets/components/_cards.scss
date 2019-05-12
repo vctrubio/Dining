@@ -23,6 +23,10 @@
   margin-top: 5px;
   position: relative;
   left: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
   }
   h4 {
   margin: 0;
