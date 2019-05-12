@@ -45,3 +45,20 @@
   width: 250px;
 }
     }
+
+    .navbar-avatar-mobile {
+      display: none;
+    }
+
+
+@media screen and (max-width: 557px) {
+   .navbar-avatar {
+      display: none;
+
+    }
+
+      .navbar-avatar-mobile {
+      display: block;
+
+    }
+    }
