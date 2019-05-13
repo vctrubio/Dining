@@ -10,10 +10,10 @@
         </button>
       </div>
       <div class="modal-body">
-       <div class="container hola">
+       <div class="container hola" >
         <div class="fondo">
           <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-6 offset-md-3" id="edit_restaurant">
               <h1>Restaurant's</h1>
               <%= simple_form_for [@restaurant] do |f| %>
               <%= f.input :name %>
@@ -21,8 +21,8 @@
               <%= f.input :capacity, input_html: {min: 1} %>
               <%= f.input :photo %>
               <%= f.input :photo_cache, as: :hidden %>
-              <%= f.input :open_hour,  as: :string, input_html: {class: "timepicker"}  %>
-              <%= f.input :close_hour, as: :string, input_html: {class: "timepicker"} %>
+              <%= f.input :open_hour,  as: :string, :placeholder => "9:00", input_html: {class: "timepicker"}  %>
+              <%= f.input :close_hour, as: :string, :placeholder => "21:00", input_html: {class: "timepicker"} %>
               <%= f.submit :class => "btn btn-primary" %>
               <% end %>
             </div>
