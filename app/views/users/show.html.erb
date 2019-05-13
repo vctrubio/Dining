@@ -19,8 +19,8 @@
   <span class="user-show-reservations mb-1 border-bottom border-danger">
     <div class="pr-5 " ><%= reservation.restaurant.name %></div>
     <div class="pr-5" ><%= reservation.restaurant.location %></div>
-    <% if !reservation.date.nil?  %>
-      <div><%= reservation.date.strftime(" %m/%d/%Y") %> <%= reservation.time.strftime("%H:%M ") %></div>
+    <% if reservation.date != nil &&  reservation.time != nil  %>
+      <%= reservation.date.strftime(" %m/%d/%Y") %> <%= reservation.time.strftime("%H:%M ") %>
     <% end %>
 
     </span>
