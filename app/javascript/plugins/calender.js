@@ -25,8 +25,24 @@ export const calender = () => {
       dateFormat: "H:i",
     })
   }
+
   const newRestaurantForm = document.getElementById("new_restaurant")
   if (null != newRestaurantForm) {
+      flatpickr("#restaurant_open_hour",{
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+    })
+
+      flatpickr("#restaurant_close_hour",{
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+    })
+  }
+
+  const editRestaurantForm = document.getElementById("edit_restaurant")
+  if (null != editRestaurantForm) {
       flatpickr("#restaurant_open_hour",{
       enableTime: true,
       noCalendar: true,
