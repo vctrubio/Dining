@@ -1,7 +1,7 @@
 class Restaurant < ApplicationRecord
   paginates_per 6
   belongs_to :user
-  has_many :reservations
+  has_many :reservations,  dependent: :destroy
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?

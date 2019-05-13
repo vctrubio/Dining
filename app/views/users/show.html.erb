@@ -46,7 +46,10 @@
   <span class="user-show-reservations mb-1 border-bottom border-danger">
     <div class="pr-5 " ><%= reservation.restaurant.name %></div>
     <div class="pr-5" ><%= reservation.restaurant.location %></div>
-    <div><%= reservation.date.strftime(" %m/%d/%Y") %> <%= reservation.time.strftime("%H:%M ") %></div>
+    <% if reservation.date  %>
+      <div><%= reservation.date.strftime(" %m/%d/%Y") %> <%= reservation.time.strftime("%H:%M ") %></div>
+    <% end %>
+
     </span>
   <% end %>
 
