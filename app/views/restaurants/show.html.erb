@@ -34,7 +34,7 @@
           <% elsif !@user_reservation.rating %>
           <%= simple_form_for (@user_reservation) do |f| %>
           <%= f.input :rating, collection: (1..5).to_a %>
-          <%= f.submit value: "Add your rating" %>
+          <%= f.submit value: "Add your rating", :class => "btn btn-primary" %>
           <% end %>
           <% else %>
           <div class="reviews">
