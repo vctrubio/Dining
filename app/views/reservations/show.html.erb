@@ -1,14 +1,29 @@
 
-<%= @reservation.restaurant.name %>
-<%= @reservation.name %>
-<%= @reservation.date.strftime("%e %b") %>
-<%= @reservation.time.hour %>
-<%= @reservation.time.min %>
-<%= @reservation.restaurant.location %>
-<%= @reservation.guests %>
-<%= link_to 'Back to restaurant', restaurant_path(@reservation.restaurant) %>
-<%= link_to 'Back to home', restaurants_path %>
+<div class="reservation-confirmed-text">
+  <h1>your resservation has beeen confirmed!</h1>
+  <h2>you can view your reservation in your <%= link_to " user page", user_path(current_user), method:'get', :class => "reservation-user-page-link" %> </h2>
+  <h3>at</h3>
+  <h4> <%= @reservation.restaurant.name %></h4>
+</div>
 
+<div>
+  <%= cl_image_tag @reservation.restaurant.photo, :class => "reservation-restaurant-image"  %>
+</div>
+
+<div class="reservation-restaurant-time">
+<%= @reservation.date.strftime("%e %b") %> <%= @reservation.time.strftime("%H:%m") %>
+</div>
+
+<div class="reservation-restaurant-address"> <p><%= @reservation.restaurant.location %></p>  </div>
+
+<div class="reservation-restaurant-guests"> <p> for <%= @reservation.guests %> guests </p>  </div>
+
+<div class="container button-block ">
+
+<%= link_to 'Back to restaurant', restaurant_path(@reservation.restaurant), :class => "btn btn-primary btn-block" %>
+
+<%= link_to 'Back to home', restaurants_path, :class => "btn btn-outline-primary btn-block" %>
+</div>
 
 
 
