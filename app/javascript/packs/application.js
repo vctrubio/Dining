@@ -26,7 +26,7 @@ import {initAutocomplete} from '../plugins/init_autocomplete';
 import {calender} from '../plugins/calender';
 import { initStarRating } from '../plugins/init_star_rating';
 import { initEasyAutocomplete } from '../plugins/init_easy_autocomplete';
-
+import {restaurantCarousel} from '../plugins/restaurant_carousel';
 
 initMapbox();
 toggleFooter();
@@ -36,3 +36,4 @@ initStarRating();
 initEasyAutocomplete();
 //loadDynamicBannerText();
 
+restaurantCarousel();
