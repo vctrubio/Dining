@@ -31,7 +31,7 @@
   </div>
 <% end %> -->
 <!-- if you're looking at someone elses profile and they have restaurants -->
-<% if current_user != @user && @user.restaurants != nil  %>
+<% if current_user != @user && !@user.restaurants.nil? &&  !@user.restaurants.empty? %>
 <h3 style= "text-align: center;"> <%= @user.username %>'s restaurants</h3>
   <div class="container">
     <div class="restaurant-carousel">
@@ -40,43 +40,64 @@
       <% end %>
     </div>
   </div>
-    <!-- if you're looking at your own profile and you have no restaurants -->
-  <% elsif current_user == @user && @user.restaurants.nil? %>
-  <h3> you have no restaurants, create some!</h3>
- <!--  if you're looking at your own profile, and haven't made any reservations yet, but have restaurants -->
-  <% elsif current_user == @user && @user.reservations == nil %>
-  <h3 style= "text-align: center;">your restaurants</h3>
-    <div class="container">
-      <div class="restaurant-carousel">
-       <% @user.restaurants.each do |restaurant| %>
-          <%= render 'components/user-cards', restaurants: @user.restaurants  %>
-      <% end %>
-    </div>
-  </div>
-
-  <!-- if you're looking at your own profile and you have made a reservation, and have restaurants -->
-  <% elsif current_user == @user && @user.reservations != nil  %>
-  <div class="container">
-      <div class="restaurant-carousel-2">
-       <% @user.restaurants.each do |restaurant| %>
-          <%= render 'components/user-cards', restaurants: @user.restaurants  %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
-
-<div class= "user-show-reservation-table">
-  <% @current_user.reservations.each do |reservation| %>
-    <div class="d-inline-flex mb-3">
-      <div class="reservation-name"><%= reservation.restaurant.name %></div>
-      <div class="reservation-date text-success ml-5"><%= reservation.date.strftime(" %m/%d/%Y") %></div>
-      <%= link_to reservation_path(reservation) do %>
-      <div class="btn btn-primary ml-5"> view</div>
-      <% end %>
+  <% elsif current_user != @user && @user.restaurants.empty? %>
+    <h3 style= "text-align: center;"> <%= @user.username %> has no restaurants</h3>
+    <h5 style= "text-align: center;"> check out these restaurants </h5>
+    <div class="restaurant-carousel">
+      <%= render 'components/user-cards', restaurants: @restaurant_sample  %>
     </div>
   <% end %>
+  <!-- if you're look at your own profile -->
+  <% if current_user == @user %>
+  <!-- if you have no restaurants -->
+    <% if current_user.restaurants == nil || current_user.restaurants.empty? %>
+      <div>
+        <h3 style= "text-align: center;">you don't have any restaurants!</h3>
+        <%= link_to new_restaurant_path() do %>
+        <div class="btn btn-outline-primary ">make one!</div>
+         <% end %>
+      </div>
+      <% if @user.reservations != nil %>
+        <div class= "user-show-reservation-table">
+          <% @current_user.reservations.each do |reservation| %>
+            <div class="d-inline-flex mb-3">
+              <div class="reservation-name"><%= reservation.restaurant.name %></div>
+              <div class="reservation-date text-success ml-5"><%= reservation.date.strftime(" %m/%d/%Y") %></div>
+              <%= link_to reservation_path(reservation) do %>
+              <div class="btn btn-primary ml-5"> view</div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+   <!--  if you have restaurants -->
+    <% elsif current_user.restaurants != nil || !current_user.restaurants.empty?  %>
+    <h3 style= "text-align: center;">your restaurants</h3>
+      <div class="container">
+        <% if @user.reservations == nil %>
+           <div class="restaurant-carousel">
+            <% else %>
+            <div class="restaurant-carousel-2">
+        <% end %>
+         <% @user.restaurants.each do |restaurant| %>
+            <%= render 'components/user-cards', restaurants: @user.restaurants  %>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div class= "user-show-reservation-table">
+      <% @current_user.reservations.each do |reservation| %>
+        <div class="d-inline-flex mb-3">
+          <div class="reservation-name"><%= reservation.restaurant.name %></div>
+          <div class="reservation-date text-success ml-5"><%= reservation.date.strftime(" %m/%d/%Y") %></div>
+          <%= link_to reservation_path(reservation) do %>
+          <div class="btn btn-primary ml-5"> view</div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+<% end %>
 
-</div>
 
 
 

@@ -19,7 +19,6 @@ $('.restaurant-carousel ').slick({
         slidesToShow: 4,
         slidesToScroll: 4,
         infinite: true,
-        dots: true
       }
     },
     {
@@ -42,7 +41,7 @@ $('.restaurant-carousel-2').slick({
   slidesToShow: 3,
   slidesToScroll: 3,
   rows: 2,
-  dots: true
+  dots: false
 });
 
 $('.user-show-reservation-table').slick({

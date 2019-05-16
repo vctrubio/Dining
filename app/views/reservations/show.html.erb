@@ -2,13 +2,14 @@
 <div class="reservation-confirmed-text">
   <h1>your resservation has beeen confirmed!</h1>
   <h2>you can view your reservation in your <%= link_to " user page", user_path(current_user), method:'get', :class => "reservation-user-page-link" %> </h2>
-  <h3>at</h3>
+  <h4>restaurant name:</h4>
   <h4> <%= @reservation.restaurant.name %></h4>
-</div>
 
-<div>
-  <%= cl_image_tag @reservation.restaurant.photo, :class => "reservation-restaurant-image"  %>
-</div>
+  <%= link_to restaurant_path(@reservation.restaurant) do %>
+  <div>
+    <%= cl_image_tag @reservation.restaurant.photo, :class => "reservation-restaurant-image"  %>
+  </div>
+  <% end %>
 
 <div class="reservation-restaurant-time">
 <%= @reservation.date.strftime("%e %b") %> <%= @reservation.time.strftime("%H:%m") %>
