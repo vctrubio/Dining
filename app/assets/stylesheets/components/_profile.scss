@@ -4,26 +4,11 @@
  border-radius: 50%;
 }
 
-.cath {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3;
-  margin-top: 30px;
-  .profile {
-    top-margin: 50px;
-  }
-  .h2 {
-    text-align: center;
-  }
-  .resta {
-    text-align: center;
-    justify-content: center;
-  }
+
+
+.user-profile-avatar {
+  margin: 0px 45%;
 }
-
-
-
 
 
 .user-show-layout {
@@ -45,14 +30,21 @@
 
 .user-show-avatar {
   display: flex;
- align-items: center;
- flex-direction: column;
- margin: 1em;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em;
 
 }
 
 .user-description-content {
-  margin-top: 1em;
+  margin: 4px 6;
+  text-align: center;
+  p {
+   width: 34vw;
+   margin: 0 39%;
+   font-size: 17px;
+   margin-bottom: 2px;
+ }
 }
 
 .user-show-card-container {
@@ -70,21 +62,87 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-   align-items: center;
+  align-items: center;
+
+
 }
 
 .user-show-reservation-table {
-    display: flex;
-    justify-content: space-between;
-    width: 97%;
-    border-style: solid;
-    border-color: black;
-    border-width: thin;
-    margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.reservation-name {
+  margin-left: 25px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 67px;
+  font-weight: 600;
+}
+
+.reservation-date {
+
 }
 
 .user-show-reservations {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+
+}
+
+.user-info {
+
+  h2 {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+}
+
+.user-desciptioon-button {
+  margin: 10px 0;
+}
+
+.restaurant-carousel {
+
+}
+
+.restaurant-carousel-card {
+  border-radius: 3px;
+
+
+
+}
+
+@media screen and (min-width: 700px) {
+  .user-info {
+
+    h2 {
+      margin-left:  50%;
+      text-align: center;
+    }
+
+  }
+
+  .user-desciptioon-button {
+
+  }
+
+
+
+}
+
+
+
+@media screen and (max-width: 700px) {
+  .user-description-content {
+    margin: 4px 6;
+    text-align: center;
+    p {
+      margin: 2px auto;
+      font-size: 14px;
+      width: 97%;
+    }
+  }
 }

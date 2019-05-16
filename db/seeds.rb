@@ -32,9 +32,9 @@ micheal = User.create(
     password: "password"
 )
 
-orio = User.create(
-    username: "orio",
-    email: "orio@gmail.com",
+oreoorbitz = User.create(
+    username: "oreoorbitz",
+    email: "oreoorbitz@gmail.com",
     password: "password"
 )
 
@@ -52,13 +52,25 @@ puts "Now creating Restaurants"
 
 puts "Now creating 20 restaurants"
 
-20.times {
+12.times {
   restaurant = Restaurant.new(
     name: "#{Faker::Restaurant.name}",
     location: "#{Faker::Address.city}",
     open_hour: "13:00",
     close_hour: "23:00",
     user: cath,
+    capacity: 10,
+    )
+  restaurant.save!
+}
+
+12.times {
+  restaurant = Restaurant.new(
+    name: "#{Faker::Restaurant.name}",
+    location: "#{Faker::Address.city}",
+    open_hour: "13:00",
+    close_hour: "23:00",
+    user: oreoorbitz,
     capacity: 10,
     )
   restaurant.save!

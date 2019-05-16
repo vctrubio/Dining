@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @restaurant_sample = Restaurant.all.sample(12)
   end
 
   def edit
@@ -13,8 +13,20 @@ class UsersController < ApplicationController
 
   end
 
+  def update
+    if @user.update(user_params)
+      redirect_to user_path
+    else
+      render :update
+    end
+  end
+
 
   private
+
+    def user_params
+    params.require(:user).permit(:description)
+  end
 
 
   def get_user

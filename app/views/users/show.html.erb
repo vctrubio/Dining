@@ -1,4 +1,144 @@
-<div class="user-show-layout">
+  <%= cl_image_tag @user.photo, class: "avatar-small user-profile-avatar" %>
+<div class="user-info">
+  <h2><%= @user.username.capitalize %></h2>
+
+</div>
+
+<div class="user-description-content">
+  <% if( @user.description.nil? || @user.description.empty?) && current_user == @user  %>
+    <p>you haven't made a reservation yet!, please make one using the button bellow!</p>
+  <% elsif @user.description.nil? %>
+  <p >this user hasn't made a descriontion of themselves yet! Please check again later.</p>
+  <% else %>
+  <p><%= @user.description %></p>
+  <% end %>
+  <% if current_user.id == @user.id %>
+    <% if @user.description.nil? %>
+      <div class="user-desciptioon-button">
+        <button class="btn btn-primary"  data-toggle="modal" data-target="#user-description"> add description</button>
+      </div>
+    <% else %>
+    <div class="user-desciptioon-button">
+      <button class="btn btn-primary"  data-toggle="modal" data-target="#user-description">edit</button>
+    </div>
+    <% end %>
+  <% end %>
+<!-- </div>
+<% if @user == current_user %>
+  <div>
+    <h3 style= "text-align: center;">your restaurants</h3>
+  </div>
+  <% else %>
+      <h3 style= "text-align: center;"> <%= @user.username %>'s restaurants</h3>
+  </div>
+<% end %> -->
+<!-- if you're looking at someone elses profile and they have restaurants -->
+<% if current_user != @user && !@user.restaurants.nil? &&  !@user.restaurants.empty? %>
+<h3 style= "text-align: center;"> <%= @user.username %>'s restaurants</h3>
+  <div class="container">
+    <div class="restaurant-carousel">
+      <% @user.restaurants.each do |restaurant| %>
+      <%= render 'components/user-cards', restaurants: @user.restaurants  %>
+      <% end %>
+    </div>
+  </div>
+  <% elsif current_user != @user && @user.restaurants.empty? %>
+    <h3 style= "text-align: center;"> <%= @user.username %> has no restaurants</h3>
+    <h5 style= "text-align: center;"> check out these restaurants </h5>
+    <div class="restaurant-carousel">
+      <%= render 'components/user-cards', restaurants: @restaurant_sample  %>
+    </div>
+  <% end %>
+  <!-- if you're look at your own profile -->
+  <% if current_user == @user %>
+  <!-- if you have no restaurants -->
+    <% if current_user.restaurants == nil || current_user.restaurants.empty? %>
+      <div>
+        <h3 style= "text-align: center;">you don't have any restaurants!</h3>
+        <%= link_to new_restaurant_path() do %>
+        <div class="btn btn-outline-primary ">make one!</div>
+         <% end %>
+      </div>
+      <% if @user.reservations != nil %>
+        <div class= "user-show-reservation-table">
+          <% @current_user.reservations.each do |reservation| %>
+            <div class="d-inline-flex mb-3">
+              <div class="reservation-name"><%= reservation.restaurant.name %></div>
+              <div class="reservation-date text-success ml-5"><%= reservation.date.strftime(" %m/%d/%Y") %></div>
+              <%= link_to reservation_path(reservation) do %>
+              <div class="btn btn-primary ml-5"> view</div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+   <!--  if you have restaurants -->
+    <% elsif current_user.restaurants != nil || !current_user.restaurants.empty?  %>
+    <h3 style= "text-align: center; margin-bottom: 10px;">your restaurants</h3>
+      <div class="container">
+        <% if @user.reservations == nil %>
+           <div class="restaurant-carousel">
+            <% else %>
+            <div class="restaurant-carousel-2">
+        <% end %>
+         <% @user.restaurants.each do |restaurant| %>
+            <%= render 'components/user-cards', restaurants: @user.restaurants  %>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+    <% if !current_user.reservations.nil? & !current_user.reservations.empty? %>
+       <h4 style= "text-align: center; margin-bottom: 10px;">your reservations</h4>
+
+    <div class= "user-show-reservation-table">
+      <% @current_user.reservations.each do |reservation| %>
+        <div class="d-inline-flex mb-3">
+          <div class="reservation-name"><%= reservation.restaurant.name %></div>
+          <div class="reservation-date text-success ml-5"><%= reservation.date.strftime(" %m/%d/%Y") %></div>
+          <%= link_to reservation_path(reservation) do %>
+          <div class="btn btn-primary ml-5"> view</div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <% else %>
+      <h4 style= "text-align: center; margin: 10px 0;">you don't have any reservations!</h4>
+           <%= link_to root_path() do %>
+        <div class="btn btn-outline-secondary ">make some!</div>
+         <% end %>
+      <% end %>
+<% end %>
+
+
+
+
+<div class="modal fade" id="user-description" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@user] do |f| %>
+        <%= f.input :description,  :input_html => { 'rows' => 4, maxlength: 239} %>
+        <%= f.submit :class => "btn btn-primary" %>
+        <% end %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="user-show-layout">
   <div class="user-box">
     <div class="user-show-avatar">
       <h2><%= @user.username.capitalize %></h2>
@@ -27,3 +167,4 @@
   <% end %>
 
 </div>
+-->

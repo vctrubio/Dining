@@ -12,6 +12,7 @@
     "moment": "^2.24.0",
     "places.js": "^1.16.4",
     "popper.js": "^1.14.7",
+    "slick-carousel": "^1.8.1",
     "typed.js": "^2.0.10"
   },
   "devDependencies": {
