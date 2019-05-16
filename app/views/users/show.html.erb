@@ -5,7 +5,9 @@
 </div>
 
 <div class="user-description-content">
-  <% if @user.description.nil? %>
+  <% if( @user.description.nil? || @user.description.empty?) && current_user == @user  %>
+    <p>you haven't made a reservation yet!, please make one using the button bellow!</p>
+  <% elsif @user.description.nil? %>
   <p >this user hasn't made a descriontion of themselves yet! Please check again later.</p>
   <% else %>
   <p><%= @user.description %></p>
@@ -72,7 +74,7 @@
       <% end %>
    <!--  if you have restaurants -->
     <% elsif current_user.restaurants != nil || !current_user.restaurants.empty?  %>
-    <h3 style= "text-align: center;">your restaurants</h3>
+    <h3 style= "text-align: center; margin-bottom: 10px;">your restaurants</h3>
       <div class="container">
         <% if @user.reservations == nil %>
            <div class="restaurant-carousel">
@@ -85,6 +87,9 @@
         </div>
       </div>
     <% end %>
+    <% if !current_user.reservations.nil? & !current_user.reservations.empty? %>
+       <h4 style= "text-align: center; margin-bottom: 10px;">your reservations</h4>
+
     <div class= "user-show-reservation-table">
       <% @current_user.reservations.each do |reservation| %>
         <div class="d-inline-flex mb-3">
@@ -96,6 +101,12 @@
         </div>
       <% end %>
     </div>
+    <% else %>
+      <h4 style= "text-align: center; margin: 10px 0;">you don't have any reservations!</h4>
+           <%= link_to root_path() do %>
+        <div class="btn btn-outline-secondary ">make some!</div>
+         <% end %>
+      <% end %>
 <% end %>
 
 

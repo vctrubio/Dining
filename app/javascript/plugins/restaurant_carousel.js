@@ -12,6 +12,7 @@ $('.restaurant-carousel ').slick({
   slidesToShow: 7,
   slidesToScroll: 7,
   rows: 3,
+  lazyLoad: 'ondemand',
   responsive: [
     {
       breakpoint: 493,
@@ -41,12 +42,14 @@ $('.restaurant-carousel-2').slick({
   slidesToShow: 3,
   slidesToScroll: 3,
   rows: 2,
+  lazyLoad: 'ondemand',
   dots: false
 });
 
 $('.user-show-reservation-table').slick({
   rows: 3,
-  dots: true
+  dots: true,
+  lazyLoad: 'ondemand',
 });
 
 

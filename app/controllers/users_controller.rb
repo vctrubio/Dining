@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @restaurant_sample = Restaurant.all.sample(10)
+    @restaurant_sample = Restaurant.all.sample(12)
   end
 
   def edit
