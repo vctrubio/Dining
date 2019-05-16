@@ -4,26 +4,11 @@
  border-radius: 50%;
 }
 
-.cath {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3;
-  margin-top: 30px;
-  .profile {
-    top-margin: 50px;
-  }
-  .h2 {
-    text-align: center;
-  }
-  .resta {
-    text-align: center;
-    justify-content: center;
-  }
+
+
+.user-profile-avatar {
+  margin: 0px 45%;
 }
-
-
-
 
 
 .user-show-layout {
@@ -79,29 +64,38 @@
   justify-content: center;
   align-items: center;
 
+
 }
 
 .user-show-reservation-table {
   display: flex;
-  justify-content: space-between;
-  width: 97%;
-  border-style: solid;
-  border-color: black;
-  border-width: thin;
-  margin-top: 0.5em;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.reservation-name {
+  margin-left: 25px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 67px;
+  font-weight: 600;
+}
+
+.reservation-date {
+
 }
 
 .user-show-reservations {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+
 }
 
 .user-info {
 
   h2 {
-    margin-left:  43%;
     text-align: center;
+    margin: 0 auto;
   }
 
 }
@@ -115,6 +109,8 @@
 }
 
 .restaurant-carousel-card {
+  border-radius: 3px;
+
 
 
 }

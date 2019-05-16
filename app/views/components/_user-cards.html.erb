@@ -1,32 +1,9 @@
   <% restaurants.each do |restaurant| %>
-  <div class="col-sm-12 col-sm-6 col-lg-4 remove-padding" id="card<%= restaurant.id %>" >
-      <%= link_to restaurant_path(restaurant) do %>
-    <div class="card-trip">
-        <%= cl_image_tag restaurant.photo%>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= restaurant.name %></h2>
-            <h3><%= restaurant.location %></h3>
-            <span class="extra-details">
-              <div id="stars">
-                <% if restaurant.reservations.empty? %>
-                  <% 5.times do  %>
-                 <i class="far fa-star"></i>
-                 <% end %>
-                <% end %>
-                <% restaurant.reservations.each do |reservation| %>
-                  <% if !(reservation.rating.nil?) %>
-                    <% reservation.rating.round.times do %>
-                      <i class="fas fa-star"></i>
-                    <% end %>
-                  <% end %>
-                  <% end %>
-                </div>
-              <h4 class="color-open"><%= restaurant.open_hour.strftime("%H:%M ") %> to <span class="color-open"><%= restaurant.close_hour.strftime("%H:%M ") %></span></h4>
-            </span>
-          </div>
-        </div>
-      </div>
-      <% end %>
+  <div class="col-sm-12 col-sm-6 col-lg-4" id="card <%= restaurant.id %>" >
+    <%= link_to restaurant_path(restaurant) do %>
+    <div class="user-card-trip">
+      <%= cl_image_tag restaurant.photo%>
     </div>
     <% end %>
+  </div>
+  <% end %>

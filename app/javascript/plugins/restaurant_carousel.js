@@ -11,7 +11,7 @@ $('.restaurant-carousel ').slick({
   speed: 300,
   slidesToShow: 7,
   slidesToScroll: 7,
-  rows: 2,
+  rows: 3,
   responsive: [
     {
       breakpoint: 493,
@@ -25,6 +25,8 @@ $('.restaurant-carousel ').slick({
     {
       breakpoint: 480,
       settings: {
+        dots: false,
+        arrows: true,
         slidesToShow: 3,
         slidesToScroll: 3
       }
@@ -34,4 +36,20 @@ $('.restaurant-carousel ').slick({
     // instead of a settings object
   ]
 });
+
+$('.restaurant-carousel-2').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  rows: 2,
+  dots: true
+});
+
+$('.user-show-reservation-table').slick({
+  rows: 3,
+  dots: true
+});
+
+
+
 }

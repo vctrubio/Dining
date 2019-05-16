@@ -1,6 +1,7 @@
-<div class="user-info d-flex">
+  <%= cl_image_tag @user.photo, class: "avatar-small user-profile-avatar" %>
+<div class="user-info">
   <h2><%= @user.username.capitalize %></h2>
-  <%= cl_image_tag @user.photo, class: "avatar-small ml-5" %>
+
 </div>
 
 <div class="user-description-content">
@@ -9,7 +10,7 @@
   <% else %>
   <p><%= @user.description %></p>
   <% end %>
-  <% if current_user = @user %>
+  <% if current_user.id == @user.id %>
     <% if @user.description.nil? %>
       <div class="user-desciptioon-button">
         <button class="btn btn-primary"  data-toggle="modal" data-target="#user-description"> add description</button>
@@ -20,15 +21,63 @@
     </div>
     <% end %>
   <% end %>
+<!-- </div>
+<% if @user == current_user %>
+  <div>
+    <h3 style= "text-align: center;">your restaurants</h3>
+  </div>
+  <% else %>
+      <h3 style= "text-align: center;"> <%= @user.username %>'s restaurants</h3>
+  </div>
+<% end %> -->
+<!-- if you're looking at someone elses profile and they have restaurants -->
+<% if current_user != @user && @user.restaurants != nil  %>
+<h3 style= "text-align: center;"> <%= @user.username %>'s restaurants</h3>
+  <div class="container">
+    <div class="restaurant-carousel">
+      <% @user.restaurants.each do |restaurant| %>
+      <%= render 'components/user-cards', restaurants: @user.restaurants  %>
+      <% end %>
+    </div>
+  </div>
+    <!-- if you're looking at your own profile and you have no restaurants -->
+  <% elsif current_user == @user && @user.restaurants.nil? %>
+  <h3> you have no restaurants, create some!</h3>
+ <!--  if you're looking at your own profile, and haven't made any reservations yet, but have restaurants -->
+  <% elsif current_user == @user && @user.reservations == nil %>
+  <h3 style= "text-align: center;">your restaurants</h3>
+    <div class="container">
+      <div class="restaurant-carousel">
+       <% @user.restaurants.each do |restaurant| %>
+          <%= render 'components/user-cards', restaurants: @user.restaurants  %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- if you're looking at your own profile and you have made a reservation, and have restaurants -->
+  <% elsif current_user == @user && @user.reservations != nil  %>
+  <div class="container">
+      <div class="restaurant-carousel-2">
+       <% @user.restaurants.each do |restaurant| %>
+          <%= render 'components/user-cards', restaurants: @user.restaurants  %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class= "user-show-reservation-table">
+  <% @current_user.reservations.each do |reservation| %>
+    <div class="d-inline-flex mb-3">
+      <div class="reservation-name"><%= reservation.restaurant.name %></div>
+      <div class="reservation-date text-success ml-5"><%= reservation.date.strftime(" %m/%d/%Y") %></div>
+      <%= link_to reservation_path(reservation) do %>
+      <div class="btn btn-primary ml-5"> view</div>
+      <% end %>
+    </div>
+  <% end %>
+
 </div>
 
-<div class="container">
-  <div class="restaurant-carousel">
-<% @user.restaurants.each do |restaurant| %>
-  <%= cl_image_tag restaurant.photo, :class => "restaurant-carousel-card pl-3 pt-3", :width => 50 %>
-<% end %>
-</div>
-</div>
 
 
 <div class="modal fade" id="user-description" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
