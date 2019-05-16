@@ -5,7 +5,7 @@
 </div>
 
 <div class="user-description-content">
-  <% if( @user.description.nil? || @user.description.empty?) && current_user == @user  %>
+  <% if( @user.description == nil || @user.description.empty?) && current_user == @user  %>
     <p>you haven't made a reservation yet!, please make one using the button bellow!</p>
   <% elsif @user.description.nil? %>
   <p >this user hasn't made a descriontion of themselves yet! Please check again later.</p>
