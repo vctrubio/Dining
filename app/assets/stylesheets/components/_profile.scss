@@ -40,11 +40,10 @@
   margin: 4px 6;
   text-align: center;
   p {
-   width: 34vw;
-   margin: 0 39%;
-   font-size: 17px;
-   margin-bottom: 2px;
- }
+    margin: 2px auto;
+    font-size: 14px;
+    width: 97%;
+  }
 }
 
 .user-show-card-container {
@@ -80,6 +79,7 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 67px;
+  min-width: 67px;
   font-weight: 600;
 }
 
@@ -112,37 +112,37 @@
   border-radius: 3px;
 
 
+}
+
+
+
+
+
+@media screen and (min-width: 583px) {
+
+.user-show-reservation-table {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0px 25%;
 
 }
 
-@media screen and (min-width: 700px) {
-  .user-info {
-
-    h2 {
-      margin-left:  50%;
-      text-align: center;
     }
 
-  }
+    @media screen and (min-width: 1000px) {
 
-  .user-desciptioon-button {
-
-  }
-
-
+.user-show-reservation-table {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0px 35%;
 
 }
 
+  .user-profile-avatar {
+    margin: 0 48%;
+  }
 
-
-@media screen and (max-width: 700px) {
-  .user-description-content {
-    margin: 4px 6;
-    text-align: center;
-    p {
-      margin: 2px auto;
-      font-size: 14px;
-      width: 97%;
     }
-  }
-}
+
