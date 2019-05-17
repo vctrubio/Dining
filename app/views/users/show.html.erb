@@ -6,7 +6,7 @@
 
 <div class="user-description-content">
   <% if( @user.description == nil || @user.description.empty?) && current_user == @user  %>
-    <p>you haven't made a reservation yet!, please make one using the button bellow!</p>
+    <p>you haven't made a description yet!, please make one using the button bellow!</p>
   <% elsif @user.description.nil? %>
   <p >this user hasn't made a descriontion of themselves yet! Please check again later.</p>
   <% else %>
@@ -86,7 +86,7 @@
       <% @current_user.reservations.each do |reservation| %>
         <div class="d-inline-flex mb-3">
           <div class="reservation-name"><%= reservation.restaurant.name %></div>
-          <div class="reservation-date text-success ml-5"><%= reservation.date.strftime(" %m/%d/%Y") %></div>
+          <div class="reservation-date text-success ml-5"><%= reservation.date.strftime(" %e %b ") %> <%= reservation.time.strftime(" %H:%m ") %></div>
           <%= link_to reservation_path(reservation) do %>
           <div class="btn btn-primary ml-5"> view</div>
           <% end %>
