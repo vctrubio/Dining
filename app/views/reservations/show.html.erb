@@ -10,10 +10,12 @@
     <%= cl_image_tag @reservation.restaurant.photo, :class => "reservation-restaurant-image"  %>
   </div>
   <% end %>
-
-<div class="reservation-restaurant-time">
+<% if !@reservation.date.nil? && !@reservation.time.nil? %>
+  <div class="reservation-restaurant-time">
 <%= @reservation.date.strftime("%e %b") %> <%= @reservation.time.strftime("%H:%m") %>
 </div>
+
+<% end %>
 
 <div class="reservation-restaurant-address"> <p><%= @reservation.restaurant.location %></p>  </div>
 
