@@ -9,8 +9,8 @@ $('.restaurant-carousel ').slick({
   dots: true,
   infinite: false,
   speed: 300,
-  slidesToShow: 7,
-  slidesToScroll: 7,
+  slidesToShow: 5,
+  slidesToScroll: 5,
   rows: 3,
   lazyLoad: 'ondemand',
   responsive: [
