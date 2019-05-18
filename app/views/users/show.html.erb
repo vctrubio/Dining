@@ -51,19 +51,7 @@
         <div class="btn btn-outline-primary ">make one!</div>
          <% end %>
       </div>
-      <% if @user.reservations != nil %>
-        <div class= "user-show-reservation-table">
-          <% @current_user.reservations.each do |reservation| %>
-            <div class="d-inline-flex mb-3">
-              <div class="reservation-name"><%= reservation.restaurant.name %></div>
-              <div class="reservation-date text-success ml-5"><%= reservation.date.strftime(" %m/%d/%Y") %></div>
-              <%= link_to reservation_path(reservation) do %>
-              <div class="btn btn-primary ml-5"> view</div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+
    <!--  if you have restaurants -->
     <% elsif current_user.restaurants != nil || !current_user.restaurants.empty?  %>
     <h3 style= "text-align: center; margin-bottom: 10px;">your restaurants</h3>
