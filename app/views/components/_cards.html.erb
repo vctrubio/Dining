@@ -3,7 +3,7 @@
       <%= link_to restaurant_path(restaurant) do %>
     <div class="card-trip">
 
-        <%= cl_image_tag restaurant.photo, lazy: true , :transformation => {:dpr => "auto", :quality => :auto,:quality => :auto,:responsive => true, :width => "auto" , :fetch_format=>:auto}, :class => "lazyload"%>
+        <%= cl_image_tag restaurant.photo, lazy: true , :transformation => {:dpr => "auto", :quality => :auto,:quality => :auto,:responsive => true, :width => "auto" , :fetch_format=>:auto, max_width: 400}, :class => "lazyload"%>
         <div class="card-trip-infos">
           <div>
             <h2><%= restaurant.name %></h2>
