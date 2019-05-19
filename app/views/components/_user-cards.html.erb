@@ -2,7 +2,7 @@
   <div class="col-sm-12 col-sm-6 col-lg-12" id="card <%= restaurant.id %>" >
     <%= link_to restaurant_path(restaurant) do %>
     <div class="user-card-trip">
-      <%= cl_image_tag restaurant.photo, :transformation => {:dpr => "auto",:quality => :auto, :responsive => true, :width => "auto" , :fetch_format=>:auto}%>
+      <%= cl_image_tag restaurant.photo, :transformation => {:dpr => "auto",:quality => :auto, :responsive => true, :width => "auto:breakpoints" , :fetch_format=>:auto}%>
     </div>
     <% end %>
   </div>
