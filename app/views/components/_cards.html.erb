@@ -3,7 +3,7 @@
       <%= link_to restaurant_path(restaurant) do %>
     <div class="card-trip">
 
-        <%= cl_image_tag restaurant.photo, :transformation => {:dpr => "auto", :quality => :auto,:quality => :auto,:responsive => true, :width => "auto:breakpoints" , :fetch_format=>:auto}%>
+        <%= cl_image_tag restaurant.photo, :transformation => {:dpr => "auto", :quality => :auto,:quality => :auto,:responsive => true, :width => "auto" , :fetch_format=>:auto},  responsive_breakpoints: { create_derived: true, bytes_step: 20000, min_width: 200, max_width: 1000 }%>
         <div class="card-trip-infos">
           <div>
             <h2><%= restaurant.name %></h2>
