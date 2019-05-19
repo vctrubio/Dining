@@ -3,7 +3,7 @@
       <%= link_to restaurant_path(restaurant) do %>
     <div class="card-trip">
 
-        <%= cl_image_tag restaurant.photo, :transformation => {:dpr => "auto",  :crop=>"fill", :crop=>"scale", :responsive => true, :width => "auto" , :fetch_format=>:auto} %>
+        <%= cl_image_tag restaurant.photo, :transformation => {:fetch_format=>:auto, :dpr => "auto",  :crop=>"fill", :crop=>"scale", :responsive => true, :client_hints => :true } %>
         <div class="card-trip-infos">
           <div>
             <h2><%= restaurant.name %></h2>
