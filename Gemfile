@@ -29,6 +29,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'gon'
+gem 'layzr-rails', :git => 'https://github.com/oreoorbitz/layzr-rails', :ref => 'a901b77'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

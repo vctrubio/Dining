@@ -15,7 +15,7 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
-import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { toggleFooter } from "./footer";
 //import { loadDynamicBannerText } from './banner';
@@ -27,6 +27,8 @@ import {calender} from '../plugins/calender';
 import { initStarRating } from '../plugins/init_star_rating';
 import { initEasyAutocomplete } from '../plugins/init_easy_autocomplete';
 import {restaurantCarousel} from '../plugins/restaurant_carousel';
+import { lazyLoad }from "../plugins/lazy_load";
+
 
 initMapbox();
 toggleFooter();
@@ -37,3 +39,5 @@ initEasyAutocomplete();
 //loadDynamicBannerText();
 
 restaurantCarousel();
+
+lazyLoad();
