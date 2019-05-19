@@ -8,10 +8,13 @@
     "flatpickr": "^4.5.7",
     "jquery": "^3.4.0",
     "jquery-bar-rating": "^1.2.2",
+    "layzr.js": "^2.2.2",
+    "lazyload": "^2.0.0-rc.2",
     "mapbox-gl": "^0.53.1",
     "moment": "^2.24.0",
     "places.js": "^1.16.4",
     "popper.js": "^1.14.7",
+    "progressively": "^1.2.5",
     "slick-carousel": "^1.8.1",
     "typed.js": "^2.0.10"
   },

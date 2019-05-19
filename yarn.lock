@@ -3949,6 +3949,11 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
+knot.js@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/knot.js/-/knot.js-1.1.5.tgz#28e72522f703f50fe98812fde224dd72728fef5d"
+  integrity sha1-KOclIvcD9Q/piBL94iTdcnKP710=
+
 last-call-webpack-plugin@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/last-call-webpack-plugin/-/last-call-webpack-plugin-2.1.2.tgz#ad80c6e310998294d2ed2180a68e9589e4768c44"
@@ -3957,10 +3962,22 @@ last-call-webpack-plugin@^2.1.2:
     lodash "^4.17.4"
     webpack-sources "^1.0.1"
 
+layzr.js@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/layzr.js/-/layzr.js-2.2.2.tgz#c9c6a2bd0e78f25d8ec5919c787321489ee49873"
+  integrity sha1-ycaivQ548l2OxZGceHMhSJ7kmHM=
+  dependencies:
+    knot.js "^1.1.5"
+
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
+
+lazyload@^2.0.0-rc.2:
+  version "2.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/lazyload/-/lazyload-2.0.0-rc.2.tgz#c774eb7966f334c9bed2f27580fc333a770eb256"
+  integrity sha512-v3OKwYrKHX09eAyeAmkpvVCF5qWZo8rxERT9AVOUFaRwlTIuCyMYVBfHYSra1uyBdKDEHnUkvpZTLgNWI9Y7lA==
 
 lcid@^1.0.0:
   version "1.0.0"
@@ -5755,6 +5772,11 @@ process@~0.5.1:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/process/-/process-0.5.2.tgz#1638d8a8e34c2f440a91db95ab9aeb677fc185cf"
   integrity sha1-FjjYqONML0QKkduVq5rrZ3/Bhc8=
+
+progressively@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/progressively/-/progressively-1.2.5.tgz#a7399fb9412b94735d8b776702ad2be43c92c4fa"
+  integrity sha1-pzmfuUErlHNdi3dnAq0r5DySxPo=
 
 promise-inflight@^1.0.1:
   version "1.0.1"
