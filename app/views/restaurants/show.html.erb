@@ -5,16 +5,16 @@
 
 <div class="container restaurant-show">
   <div class="contact1">
-    <%= cl_image_tag @restaurant.photo, :transformation => {:dpr => "auto", :responsive => true, :width => "auto:high" , :quality=>"auto", :fetch_format=>:webp} , :class => "restaurant-photo-mobile" %>
+    <%= cl_image_tag @restaurant.photo, :transformation => {:dpr => "auto", :responsive => true, :width => "auto" , :fetch_format=>:auto} , :class => "restaurant-photo-mobile" %>
 
     <div class="container-contact1">
-      <%= cl_image_tag @restaurant.photo,:transformation => {:dpr => "auto", :responsive => true, :width => "auto:high" , :quality=>"auto", :fetch_format=>:webp}, :class => "restaurant-photo" %>
+      <%= cl_image_tag @restaurant.photo,:transformation => {:dpr => "auto", :responsive => true, :width => "auto" :fetch_format=>:auto}, :class => "restaurant-photo" %>
 
       <div class="non_pic_content">
         <div class="restaurant-content">
           <div class="name-photo">
             <h1><%= @restaurant.name %></h1>
-            <%= link_to (cl_image_tag @restaurant.user.photo, :transformation => {:dpr => "auto", :responsive => true, :width => "auto" , :quality=>"auto:high", :fetch_format=>:webp},  class: "avatar-hosted"), user_path(@restaurant.user) %>
+            <%= link_to (cl_image_tag @restaurant.user.photo, :transformation => {:dpr => "auto", :responsive => true, :width => "auto" :fetch_format=>:auto},  class: "avatar-hosted"), user_path(@restaurant.user) %>
           </div>
           <h2>Location: <%= @restaurant.location %></h2>
           <h3>Seats available: <span class="res-capacity"> <%= @restaurant.capacity %></span></h3>
