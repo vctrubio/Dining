@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
       <%= link_to restaurants_path, class: "navbar-brand" do %>
-        <%= image_tag "https://webstockreview.net/images/clipart-restaurant-lunch-restaurant-13.png", :transformation => {:dpr => "auto", :responsive => true, :width => "auto:high" , :quality=>"auto", :fetch_format=>:webp} %>
+        <%= cl_image_tag "https://webstockreview.net/images/clipart-restaurant-lunch-restaurant-13.png", :transformation => {:dpr => "auto", :responsive => true, :width => "auto" , :fetch_format=>:auto} %>
       <% end %>
 
       <%= form_tag restaurants_path, method: :get do %>
