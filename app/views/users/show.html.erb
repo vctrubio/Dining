@@ -1,4 +1,4 @@
-  <%= cl_image_tag @user.photo, :transformation => {:dpr => "auto", :responsive => true, :width => "auto" , :fetch_format=>:auto}, class: "avatar-small user-profile-avatar" %>
+  <%= cl_image_tag @user.photo, :transformation => {:dpr => "auto", :responsive => true,:quality => :auto, :width => "auto" , :fetch_format=>:auto}, class: "avatar-small user-profile-avatar" %>
 <div class="user-info">
   <h2><%= @user.username.capitalize %></h2>
 
