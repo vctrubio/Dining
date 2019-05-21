@@ -7,7 +7,7 @@
 
   <%= link_to restaurant_path(@reservation.restaurant) do %>
   <div class="">
-    <%= cl_image_tag @reservation.restaurant.photo, :transformation => {:dpr => "auto",:quality => :auto, :responsive => true, :width => "auto" , :fetch_format=>:auto,max_width: 600}, :class => "reservation-restaurant-image" %>
+    <%= cl_image_tag @reservation.restaurant.photo, :transformation => {:dpr => "auto",:quality => :auto , :responsive => true, :width => "auto" , :fetch_format=>:auto}, :class => "reservation-restaurant-image" %>
   </div>
   <% end %>
 <% if !@reservation.date.nil? && !@reservation.time.nil? %>

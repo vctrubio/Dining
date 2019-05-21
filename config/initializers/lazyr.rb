@@ -1,3 +1,3 @@
 Layzr::Rails.configure do |config|
-    config.placeholder = "/assets/placeholder.jpg"
+    config.placeholder = "https://via.placeholder.com/200.png?text=Dining"
   end
