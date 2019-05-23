@@ -3317,6 +3317,11 @@ ignore-walk@^3.0.1:
   dependencies:
     minimatch "^3.0.4"
 
+img-2@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/img-2/-/img-2-0.0.4.tgz#0283748f9fb5a0a9bca20e8d2d29614844131cfd"
+  integrity sha512-9M6IzhxsIvrN/NI9mhmQ6RIxE0f/wCWvAkXNMGMmqj/KRDoskOxOBDzwEvrMB/PTXCy8+1wu0IqurLkjXRmc8g==
+
 immediate@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.2.3.tgz#d140fa8f614659bd6541233097ddaac25cdd991c"
@@ -3978,6 +3983,11 @@ lazyload@^2.0.0-rc.2:
   version "2.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/lazyload/-/lazyload-2.0.0-rc.2.tgz#c774eb7966f334c9bed2f27580fc333a770eb256"
   integrity sha512-v3OKwYrKHX09eAyeAmkpvVCF5qWZo8rxERT9AVOUFaRwlTIuCyMYVBfHYSra1uyBdKDEHnUkvpZTLgNWI9Y7lA==
+
+lazysizes@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-5.0.0.tgz#b3f14f006940085f2c56b8b0d302da9e8d4aed75"
+  integrity sha512-igrN2RCmK7YBjy6w4PfKk+lfi52VrniM0jxChsCGBs8hGNv6P1RPCvMnl4kTuWIzwnTBfPlK8krxu6Mppc9fgA==
 
 lcid@^1.0.0:
   version "1.0.0"
