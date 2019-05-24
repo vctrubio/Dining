@@ -17,9 +17,21 @@
             <h1><%= @restaurant.name %></h1>
             <%= link_to (cl_image_tag @restaurant.user.photo,:transformation => {:dpr => "auto",:quality => :auto, :responsive => true, :width => "auto" , :fetch_format=>:auto},  class: "avatar-hosted"), user_path(@restaurant.user) %>
           </div>
-          <h2>Location: <%= @restaurant.location %></h2>
-          <h3>Seats available: <span class="res-capacity"> <%= @restaurant.capacity %></span></h3>
-          <h3>Open from: <%= @restaurant.open_hour.strftime("%H:%M ") %> to <%= @restaurant.close_hour.strftime("%H:%M ") %></h3>
+          <span class="d-inline">
+            <h2>Location:</h2>
+            <div class="mb-1"><%= @restaurant.location %> </div>
+          </span>
+          <div>
+            <h3>Seats available: <span class="res-capacity"> </span></h3>
+            <div class="mb-1"><%= @restaurant.capacity %></div>
+          </div>
+          <div>
+            <h3>Open from: </h3>
+            <div >
+              <%= @restaurant.open_hour.strftime("%H:%M ") %> to <%= @restaurant.close_hour.strftime("%H:%M ") %>
+            </div>
+          </div>
+
           <div class="restaurant-description"><%= @restaurant.description %></div>
           <% if current_user == @restaurant.user %>
           <%= link_to "destroy me", restaurant_path(@restaurant), method: 'delete', class: "btn btn-danger"  %>
