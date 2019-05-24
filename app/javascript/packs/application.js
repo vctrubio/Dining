@@ -27,7 +27,6 @@ import {calender} from '../plugins/calender';
 import { initStarRating } from '../plugins/init_star_rating';
 import { initEasyAutocomplete } from '../plugins/init_easy_autocomplete';
 import {restaurantCarousel} from '../plugins/restaurant_carousel';
-import Img2 from 'img-2';
 import 'lazysizes';
 
 initMapbox();
